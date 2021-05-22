@@ -40,7 +40,19 @@ func rightMosue(x int, y int) {
 func rightMosueforimg(img string, count int) (succ bool) {
 
 	succscr, x, y := whilescreen(img, count)
-	if succscr {
+	succ = rightMosueforimgFunc(succscr, x, y)
+	return
+}
+
+func rightMosueforimgEasy(img string, count int) (succ bool) {
+
+	succscr, x, y := whilescreenEasy(img, count)
+	succ = rightMosueforimgFunc(succscr, x, y)
+	return
+}
+
+func rightMosueforimgFunc(succsrc bool, x int, y int) (succ bool) {
+	if succsrc {
 		robotgo.MoveMouse(x, y)
 		robotgo.Sleep(1)
 		robotgo.MouseToggle(`down`, `right`)

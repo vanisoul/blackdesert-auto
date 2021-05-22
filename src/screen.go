@@ -92,7 +92,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 	count := 200
 	if len(jcount) == 1 {
-		count = jcount[0]
+		count = int(jcount[0])
 	}
 	for {
 		robotgo.Sleep(2)
@@ -117,11 +117,75 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 }
 
+func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
+	file, _ := os.Open(pngName)
+	c, _, err := image.DecodeConfig(file)
+	if err != nil {
+		log.Errorf("load pngName Error:", err)
+		file.Close()
+		return
+	}
+	file.Close()
+
+	imgh := c.Height
+	imgw := c.Width
+	bit_map := robotgo.OpenBitmap(pngName)
+
+	defer robotgo.FreeBitmap(bit_map)
+
+	count := 200
+	if len(jcount) == 1 {
+		count = int(jcount[0])
+	}
+	for {
+		robotgo.Sleep(2)
+
+		fx, fy := robotgo.FindBitmap(bit_map, nil, 0.1)
+
+		fmt.Println("FindBitmap------", fx, fy)
+		if fx != -1 && fy != -1 {
+			succ = true
+			x = fx + (imgw / 2)
+			y = fy + (imgh / 2)
+			return
+		}
+		count = count - 1
+		if count == 0 {
+			succ = false
+			x = -1
+			y = -1
+			return
+		}
+	}
+
+}
+
 func whilescreenMany(count int, imgNames ...string) (succ bool, resx int, resy int) {
 
 	for count > 0 {
 		for _, imgName := range imgNames {
 			succScr, x, y := whilescreen(imgName, 1)
+			if succScr {
+				succ = true
+				resx = x
+				resy = y
+				return
+			}
+		}
+		robotgo.Sleep(1)
+		count = count - 1
+	}
+	succ = false
+	resx = -1
+	resy = -1
+	return
+}
+
+func whilescreenManyEasy(count int, imgNames ...string) (succ bool, resx int, resy int) {
+
+	for count > 0 {
+		for _, imgName := range imgNames {
+			succScr, x, y := whilescreenEasy(imgName, 1)
 			if succScr {
 				succ = true
 				resx = x
