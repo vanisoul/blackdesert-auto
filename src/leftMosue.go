@@ -3,6 +3,7 @@ package main
 import "github.com/go-vgo/robotgo"
 
 func leftMosue(x int, y int) {
+	robotgo.Sleep(1)
 	robotgo.MoveMouse(x, y)
 	robotgo.Sleep(1)
 	robotgo.MouseToggle(`down`, `left`)
@@ -26,6 +27,16 @@ func leftMosueforimg(img string) (succ bool) {
 		return
 	}
 }
+
+func rightMosue(x int, y int) {
+	robotgo.Sleep(1)
+	robotgo.MoveMouse(x, y)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`down`, `right`)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`up`, `right`)
+}
+
 func rightMosueforimg(img string, count int) (succ bool) {
 
 	succscr, x, y := whilescreen(img, count)

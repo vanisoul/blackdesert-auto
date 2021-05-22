@@ -23,7 +23,7 @@ func main() {
 	// scrollup(24)
 	// _, x, y := whilescreen("img/bank_ok.png")
 	// fmt.Println("FindBitmap------", x, y)
-	saveRepo("img/bag_beer_1.png")
+	saveRepoAll("img/bag_beer_1.png")
 
 	for false {
 		succ := checkMainScreen()
@@ -133,7 +133,7 @@ func startGame() {
 }
 
 func selectGraphics(grap int) {
-	succsel, x, y := whilescreenTwo("img/selectGraphics.png", "img/selectGraphics2.png")
+	succsel, x, y := whilescreenMany("img/selectGraphics.png", "img/selectGraphics2.png")
 	if succsel {
 		leftMosue(x, y+(40*grap))
 		return
