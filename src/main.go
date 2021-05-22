@@ -19,7 +19,7 @@ func main() {
 		log.Errorf("cannot load config:", err)
 		return
 	}
-	tackRepoAll(beerConfig.Count, beerConfig.ArticlesTake...)
+	saveRepoAll(beerConfig.ArticlesSave...)
 
 	for false {
 		succ := checkMainScreen()
@@ -129,7 +129,7 @@ func startGame() {
 }
 
 func selectGraphics(grap int) {
-	succsel, x, y := whilescreenMany("img/selectGraphics.png", "img/selectGraphics2.png")
+	succsel, x, y := whilescreenMany(100, "img/selectGraphics.png", "img/selectGraphics2.png")
 	if succsel {
 		leftMosue(x, y+(40*grap))
 		return

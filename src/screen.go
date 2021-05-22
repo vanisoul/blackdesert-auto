@@ -117,8 +117,8 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 }
 
-func whilescreenMany(imgNames ...string) (succ bool, resx int, resy int) {
-	count := 100
+func whilescreenMany(count int, imgNames ...string) (succ bool, resx int, resy int) {
+
 	for count > 0 {
 		for _, imgName := range imgNames {
 			succScr, x, y := whilescreen(imgName, 1)

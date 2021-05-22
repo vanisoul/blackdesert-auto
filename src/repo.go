@@ -39,7 +39,7 @@ func tackRepoOne(quantity int, imgs ...string) (succ bool) {
 	if oksucc {
 		count := 3
 		for count > 0 {
-			succarticle, articlex, articley := whilescreenMany(imgs...)
+			succarticle, articlex, articley := whilescreenMany(3, imgs...)
 			if succarticle {
 				rightMosue(articlex, articley)
 				takeCount(quantity)
@@ -61,7 +61,7 @@ func tackRepoAll(quantity int, imgs ...string) (succ bool) {
 		count := 3
 		for count > 0 {
 			for _, img := range imgs {
-				succright := rightMosueforimg(img, 10)
+				succright := rightMosueforimg(img, 3)
 				if succright {
 					takeCount(quantity)
 					// leftMosueforimg("img/bag_max.png")
@@ -88,7 +88,7 @@ func saveRepoAll(imgs ...string) {
 		count := 3
 		for count > 0 {
 			for _, img := range imgs {
-				succright := rightMosueforimg(img, 10)
+				succright := rightMosueforimg(img, 3)
 				if succright {
 					leftMosueforimg("img/bag_max.png")
 					leftMosueforimg("img/bagToBankEnter.png")
