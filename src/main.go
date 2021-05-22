@@ -1,8 +1,17 @@
 package main
 
-import "github.com/labstack/gommon/log"
+import (
+	"os"
+
+	"github.com/labstack/gommon/log"
+)
 
 func main() {
+	arg := os.Args[1]
+	if arg == "debug" {
+		screenDebug()
+	}
+
 	infoConfig, err := LoadConfigInfo()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
