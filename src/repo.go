@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strconv"
 	"strings"
 
 	"github.com/go-vgo/robotgo"
@@ -30,7 +31,7 @@ func searchRepo() {
 	}
 }
 
-func tackRepoOne(imgs ...string) (succ bool) {
+func tackRepoOne(quantity int, imgs ...string) (succ bool) {
 	oksucc, x, y := whilescreen("img/bank_ok.png")
 
 	if oksucc {
@@ -39,7 +40,7 @@ func tackRepoOne(imgs ...string) (succ bool) {
 			succarticle, articlex, articley := whilescreenMany(imgs...)
 			if succarticle {
 				rightMosue(articlex, articley)
-				leftMosueforimg("img/bag_max.png")
+				takeCount(quantity)
 				leftMosueforimg("img/bagToBankEnter.png")
 				return
 			}
@@ -51,7 +52,7 @@ func tackRepoOne(imgs ...string) (succ bool) {
 	return
 }
 
-func tackRepoAll(imgs ...string) (succ bool) {
+func tackRepoAll(quantity int, imgs ...string) (succ bool) {
 	oksucc, x, y := whilescreen("img/bank_ok.png")
 
 	if oksucc {
@@ -60,7 +61,8 @@ func tackRepoAll(imgs ...string) (succ bool) {
 			for _, img := range imgs {
 				succright := rightMosueforimg(img, 10)
 				if succright {
-					leftMosueforimg("img/bag_max.png")
+					takeCount(quantity)
+					// leftMosueforimg("img/bag_max.png")
 					leftMosueforimg("img/bagToBankEnter.png")
 				}
 			}
@@ -89,5 +91,13 @@ func saveRepoAll(imgs ...string) {
 			scrolldown(8)
 			count = count - 1
 		}
+	}
+}
+
+func takeCount(quantity int) {
+	robotgo.Sleep(1)
+	for _, key := range strconv.Itoa(quantity) {
+		robotgo.KeyTap(string(key))
+		robotgo.Sleep(1)
 	}
 }

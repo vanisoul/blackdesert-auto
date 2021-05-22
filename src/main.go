@@ -23,8 +23,8 @@ func main() {
 	// scrollup(24)
 	// _, x, y := whilescreen("img/bank_ok.png")
 	// fmt.Println("FindBitmap------", x, y)
-	saveRepoAll("img/bag_beer_1.png")
-
+	// saveRepoAll("img/bag_beer_1.png")
+	beerTask()
 	for false {
 		succ := checkMainScreen()
 		if succ {
