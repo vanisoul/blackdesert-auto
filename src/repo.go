@@ -31,7 +31,7 @@ func searchRepo() {
 			leftMosue(x-240, y-170)
 			robotgo.Sleep(1)
 			robotgo.KeyTap("t")
-			robotgo.Sleep(5)
+			robotgo.Sleep(60)
 			robotgo.KeyTap("t")
 			robotgo.Sleep(1)
 			robotgo.KeyTap("control")
