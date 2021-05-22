@@ -30,6 +30,7 @@ func taskLogin() {
 	}
 	opensucc := openGameClient(infoConfig.GamePath)
 	if !opensucc {
+		log.Errorf("openGameClient")
 		return
 	}
 	accConfig, err := LoadConfigAccount()
@@ -40,14 +41,15 @@ func taskLogin() {
 
 	setaccpwsuu := setAccPW(accConfig.Account, accConfig.Password)
 	if !setaccpwsuu {
+		log.Errorf("setaccpw")
 		return
 	}
 
-	// a := "a"
-	// if accConfig.FAkey != "" {
-	// 	pwd, time := load2FA(accConfig.FAkey)
-	// }
-
+	if accConfig.FAkey != "" {
+		pwd, _ := load2FA(accConfig.FAkey)
+		setFA(pwd)
+	}
+	startGame()
 	os.Exit(0)
 }
 
@@ -57,4 +59,16 @@ func taskFeatures() {
 
 func checkMainScreen() (ok bool) {
 	return false
+}
+
+func startGame() {
+	succstart, x, y := whilescreen("img/clientStart.png")
+	if succstart {
+		leftMosue(x, y)
+	} else {
+		succupdata, _, _ := whilescreen("img/clientUpdate.png", 5)
+		if succupdata {
+			startGame()
+		}
+	}
 }

@@ -74,7 +74,7 @@ import (
 // 	robotgo.SaveBitmap(bitmap, "tmp.png")
 // }
 
-func whilescreen(pngName string) (succ bool, x int, y int) {
+func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 	file, _ := os.Open(pngName)
 	c, _, err := image.DecodeConfig(file)
 	if err != nil {
@@ -89,7 +89,11 @@ func whilescreen(pngName string) (succ bool, x int, y int) {
 	bit_map := robotgo.OpenBitmap(pngName)
 
 	defer robotgo.FreeBitmap(bit_map)
+
 	count := 200
+	if len(jcount) == 1 {
+		count = jcount[0]
+	}
 	for {
 		robotgo.Sleep(2)
 
