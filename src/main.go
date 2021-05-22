@@ -92,6 +92,10 @@ func checkMainScreen() (succ bool) {
 	count := 5
 	for count > 0 {
 		robotgo.KeyTap("esc")
+		robotgo.Sleep(1)
+		robotgo.KeyTap("esc")
+		robotgo.Sleep(1)
+		robotgo.KeyTap("esc")
 		succ, _, _ = whilescreen("img/esc.png", 5)
 		if succ {
 			robotgo.KeyTap("esc")

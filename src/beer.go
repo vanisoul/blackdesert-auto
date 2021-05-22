@@ -16,11 +16,13 @@ func beerTask() {
 	if beerConfig.Status {
 		searchRepo()
 		tackRepoOne(beerConfig.Count, beerConfig.ArticlesTake...)
+		checkMainScreen()
 		hot := strings.ToLower(beerConfig.HotKey)
 		robotgo.KeyTap(hot)
 		leftMosueforimg("img/beerRe.png")
 		leftMosueforimg("img/beerEnter.png")
 		leftMosueforimg("img/beerReStart.png")
+		checkMainScreen()
 		saveRepoAll(beerConfig.ArticlesSave...)
 	}
 }
