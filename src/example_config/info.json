@@ -2,6 +2,7 @@
     "role" : "1",
     "location" : "Heidel",
     "gamePath" : "D:\\BlackDesert",
+    "selectGraphics" : 1,
     "gameScreenX" : 0,
     "gameScreenY" : 0,
     "gameScreenW" : 1920,
