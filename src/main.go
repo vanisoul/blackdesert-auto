@@ -11,8 +11,8 @@ import (
 func main() {
 	// robotgo.DragMouse()
 
-	// fx, fy := robotgo.GetMousePos()
-	// fmt.Println("FindBitmap------", fx, fy)
+	fx, fy := robotgo.GetMousePos()
+	fmt.Println("FindBitmap------", fx, fy)
 
 	// robotgo.DragMouse(fx, fy)
 	// leftMosueforimg("img/randomLogin.png")
@@ -21,7 +21,8 @@ func main() {
 
 	// leftMosueforimg("img/randomLogin.png")
 
-	for {
+	searchRepo()
+	for false {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()

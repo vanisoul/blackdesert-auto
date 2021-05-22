@@ -2,7 +2,7 @@ package main
 
 import "github.com/go-vgo/robotgo"
 
-func clickLocation(x int, y int, text string, args ...func()) (succ bool) {
+func textLocation(x int, y int, text string, args ...func()) (succ bool) {
 
 	leftMosue(x, y)
 

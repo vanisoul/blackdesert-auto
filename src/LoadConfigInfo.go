@@ -29,4 +29,6 @@ type ConfigInfo struct {
 	GameScreenY    int    `mapstructure:"gameScreenY"`
 	GameScreenW    int    `mapstructure:"gameScreenW"`
 	GameScreenH    int    `mapstructure:"gameScreenH"`
+	SearchNPC      string `mapstructure:"searchNPC"`
+	Repo           string `mapstructure:"repo"`
 }

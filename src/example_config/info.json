@@ -6,5 +6,7 @@
     "gameScreenX" : 0,
     "gameScreenY" : 0,
     "gameScreenW" : 1920,
-    "gameScreenH" : 1080
+    "gameScreenH" : 1080,
+    "searchNPC" : "alt+m",
+    "repo" : "阿梅里葛"
 }
