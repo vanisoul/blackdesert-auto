@@ -15,5 +15,5 @@ func openGameClient(path string) {
 		return
 	}
 
-	whilescreen("img/gameclient.png")
+	whilescreen("img/gameclientok.png")
 }

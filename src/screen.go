@@ -77,6 +77,23 @@ func screenXY(x int, y int, w int, h int) {
 	robotgo.SaveBitmap(bitmap, "tmp.png")
 }
 
-func whilescreen(pngName string) {
+func whilescreen(pngName string) (x int, y int) {
+	count := 10
+	for {
+		bit_map := robotgo.OpenBitmap(pngName)
+		fx, fy := robotgo.FindBitmap(bit_map) //查找位图
+		fmt.Println("FindBitmap------", fx, fy)
+		if fx != -1 && fy != -1 {
+			x = fx
+			y = fy
+			return
+		}
+		count = count - 1
+		if count == 0 {
+			x = -1
+			y = -1
+			return
+		}
+	}
 
 }
