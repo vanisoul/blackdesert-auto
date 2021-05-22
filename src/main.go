@@ -1,13 +1,15 @@
 package main
 
 import (
+	"os"
+
 	"github.com/labstack/gommon/log"
 )
 
 func main() {
-	closeblack()
-	// robotgo.MoveMouse(1080, 383)
-	for false {
+	// closeblack()
+	// robotgo.MoveMouse(1297, 411-55)
+	for {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
@@ -40,11 +42,13 @@ func taskLogin() {
 	if !setaccpwsuu {
 		return
 	}
+
 	// a := "a"
 	// if accConfig.FAkey != "" {
 	// 	pwd, time := load2FA(accConfig.FAkey)
 	// }
 
+	os.Exit(0)
 }
 
 func taskFeatures() {

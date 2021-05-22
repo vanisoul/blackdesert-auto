@@ -6,14 +6,20 @@ func setAccPW(acc string, pw string) (succ bool) {
 	ctrlA := func() {
 		robotgo.KeyTap("a", "control")
 	}
-	accsucc := clickLocation("img/login.png", 20, 20, acc, ctrlA)
-	if !accsucc {
-		return
+	succsc, imgx, imgy := whilescreen("img/login.png")
+	if succsc {
+		accsucc := clickLocation(imgx, imgy-105, acc, ctrlA)
+		if !accsucc {
+			return
+		}
+		pwsucc := clickLocation(imgx, imgy-55, pw)
+		if !pwsucc {
+			return
+		}
+		leftMosue(imgx, imgy)
+		succ = true
+	} else {
+		succ = false
 	}
-	pwsucc := clickLocation("img/login.png", 20, 10, pw)
-	if !pwsucc {
-		return
-	}
-	succ = true
 	return
 }

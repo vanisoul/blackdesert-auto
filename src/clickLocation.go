@@ -2,15 +2,9 @@ package main
 
 import "github.com/go-vgo/robotgo"
 
-func clickLocation(imgName string, x int, y int, text string, args ...func()) (succ bool) {
+func clickLocation(x int, y int, text string, args ...func()) (succ bool) {
 
-	succ, imgx, imgy := whilescreen(imgName)
-
-	if succ {
-		leftMosue(imgx+x, imgy+y)
-	} else {
-		succ = false
-	}
+	leftMosue(x, y)
 
 	if len(args) == 1 {
 		fc := args[0]
