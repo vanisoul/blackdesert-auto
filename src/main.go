@@ -133,19 +133,9 @@ func startGame() {
 }
 
 func selectGraphics(grap int) {
-	count := 100
-	for count > 0 {
-		succsel, x, y := whilescreen("img/selectGraphics.png", 1)
-		if succsel {
-			leftMosue(x, y+(40*grap))
-			return
-		}
-		succsel2, x, y := whilescreen("img/selectGraphics2.png", 1)
-		if succsel2 {
-			leftMosue(x, y+(40*grap))
-			return
-		}
-		robotgo.Sleep(1)
-		count = count - 1
+	succsel, x, y := whilescreenTwo("img/selectGraphics.png", "img/selectGraphics2.png")
+	if succsel {
+		leftMosue(x, y+(40*grap))
+		return
 	}
 }

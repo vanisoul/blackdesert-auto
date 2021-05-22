@@ -116,3 +116,29 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 	}
 
 }
+
+func whilescreenTwo(pngNameOne string, pngNametwo string) (succ bool, resx int, resy int) {
+	count := 100
+	for count > 0 {
+		succsel, x, y := whilescreen("img/selectGraphics.png", 1)
+		if succsel {
+			succ = true
+			resx = x
+			resy = y
+			return
+		}
+		succsel2, x2, y2 := whilescreen("img/selectGraphics2.png", 1)
+		if succsel2 {
+			succ = true
+			resx = x2
+			resy = y2
+			return
+		}
+		robotgo.Sleep(1)
+		count = count - 1
+	}
+	succ = false
+	resx = -1
+	resy = -1
+	return
+}
