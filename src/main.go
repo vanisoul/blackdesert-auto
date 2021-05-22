@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
+	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
 )
 
@@ -53,6 +55,12 @@ func taskLogin() {
 	if infoConfig.SelectGraphics != 0 {
 		selectGraphics(infoConfig.SelectGraphics)
 	}
+
+	leftMosueforimg("img/gameStart.png")
+	leftMosueforimg("img/agree.png")
+
+	setSafe(accConfig.Safe)
+
 	os.Exit(0)
 }
 
@@ -62,6 +70,16 @@ func taskFeatures() {
 
 func checkMainScreen() (ok bool) {
 	return false
+}
+
+func setSafe(safepwd string) {
+	for _, pwd := range safepwd {
+		robotgo.Sleep(2)
+		img := fmt.Sprintf("img/%s.png", string(pwd))
+		leftMosueforimg(img)
+	}
+	leftMosueforimg("img/setSafePW.png")
+
 }
 
 func startGame() {
@@ -77,9 +95,17 @@ func startGame() {
 }
 
 func selectGraphics(grap int) {
-	succsel, x, y := whilescreen("img/selectGraphics.png")
-	if succsel {
-		leftMosue(x, y+(40*grap))
+	count := 100
+	for count > 0 {
+		succsel, x, y := whilescreen("img/selectGraphics.png", 1)
+		if succsel {
+			leftMosue(x, y+(40*grap))
+		}
+		succsel2, x, y := whilescreen("img/selectGraphics2.png", 1)
+		if succsel2 {
+			leftMosue(x, y+(40*grap))
+		}
+		robotgo.Sleep(1)
+		count = count - 1
 	}
-
 }
