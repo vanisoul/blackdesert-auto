@@ -15,7 +15,13 @@ func main() {
 	// fmt.Println("FindBitmap------", fx, fy)
 
 	// robotgo.DragMouse(fx, fy)
-	for false {
+	// leftMosueforimg("img/randomLogin.png")
+	// leftMosueforimg("img/gameStart.png")
+	// leftMosueforimg("img/agree.png")
+
+	// leftMosueforimg("img/randomLogin.png")
+
+	for {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
@@ -64,16 +70,40 @@ func taskLogin() {
 	leftMosueforimg("img/agree.png")
 
 	setSafe(accConfig.Safe)
+	leftMosueforimg("img/randomLogin.png")
 
+	chooseRole(infoConfig.Role)
 	os.Exit(0)
 }
 
 func taskFeatures() {
-
+	beerTask()
+	checkMainScreen()
 }
 
-func checkMainScreen() (ok bool) {
-	return false
+func checkMainScreen() (succ bool) {
+	count := 5
+	for count > 0 {
+		robotgo.KeyTap("esc")
+		succ, _, _ = whilescreen("img/esc.png", 5)
+		if succ {
+			robotgo.KeyTap("esc")
+			robotgo.Sleep(2)
+			return
+		}
+		count = count - 1
+	}
+	return
+}
+
+func chooseRole(role int) {
+	rolesucc, x, y := whilescreen("img/role.png")
+	if rolesucc {
+		y = y - 865
+		leftMosue(x, y+((role-1)*100))
+		robotgo.Sleep(1)
+		leftMosueforimg("img/join.png")
+	}
 }
 
 func setSafe(safepwd string) {

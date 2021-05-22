@@ -21,7 +21,7 @@ func LoadConfigInfo() (config ConfigInfo, err error) {
 }
 
 type ConfigInfo struct {
-	Role           string `mapstructure:"role"`
+	Role           int    `mapstructure:"role"`
 	Location       string `mapstructure:"location"`
 	GamePath       string `mapstructure:"gamePath"`
 	SelectGraphics int    `mapstructure:"selectGraphics"`
