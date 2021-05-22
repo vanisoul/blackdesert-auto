@@ -75,6 +75,7 @@ import (
 // }
 
 func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
+
 	file, _ := os.Open(pngName)
 	c, _, err := image.DecodeConfig(file)
 	if err != nil {
@@ -94,6 +95,8 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 	if len(jcount) == 1 {
 		count = int(jcount[0])
 	}
+	log.Info("screen", pngName)
+	log.Info("count", count)
 	for {
 		robotgo.Sleep(2)
 
@@ -118,6 +121,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 }
 
 func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
+
 	file, _ := os.Open(pngName)
 	c, _, err := image.DecodeConfig(file)
 	if err != nil {
@@ -137,6 +141,8 @@ func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
 	if len(jcount) == 1 {
 		count = int(jcount[0])
 	}
+	log.Info("screen", pngName)
+	log.Info("count", count)
 	for {
 		robotgo.Sleep(2)
 

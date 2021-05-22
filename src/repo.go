@@ -14,9 +14,10 @@ func searchRepo() {
 		log.Errorf("cannot load config:", err)
 		return
 	}
+	log.Info("searchRepo")
 	checkMainScreen()
 	robotgo.KeyTap("r")
-	succCheckRepo, repox, repoy := whilescreen("img/bank.png")
+	succCheckRepo, repox, repoy := whilescreen("img/bank.png", 2)
 	if succCheckRepo {
 		leftMosue(repox, repoy)
 	} else {

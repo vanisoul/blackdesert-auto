@@ -21,7 +21,7 @@ func main() {
 	// }
 	// saveRepoAll(beerConfig.ArticlesSave...)
 
-	for false {
+	for {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
