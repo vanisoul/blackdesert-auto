@@ -30,10 +30,40 @@ func searchRepo() {
 	}
 }
 
-func tackRepo(img string) {
+func tackRepo(img string) (succ bool) {
+	oksucc, x, y := whilescreen("img/bank_ok.png")
 
+	if oksucc {
+		count := 3
+		for count > 0 {
+			succright := rightMosueforimg(img, 2)
+			if succright {
+				leftMosueforimg("img/bag_max.png")
+				leftMosueforimg("img/bagToBankEnter.png")
+			}
+			robotgo.MoveMouse(x-148, y+131)
+			scrolldown(6)
+			count = count - 1
+		}
+	}
+	return
 }
 
 func saveRepo(img string) {
+	oksucc, x, y := whilescreen("img/bank_ok.png")
 
+	if oksucc {
+		count := 3
+		for count > 0 {
+			succright := rightMosueforimg(img, 10)
+			if succright {
+				leftMosueforimg("img/bag_max.png")
+				leftMosueforimg("img/bagToBankEnter.png")
+				return
+			}
+			robotgo.MoveMouse(x-3, y+151)
+			scrolldown(8)
+			count = count - 1
+		}
+	}
 }

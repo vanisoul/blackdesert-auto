@@ -11,8 +11,8 @@ import (
 func main() {
 	// robotgo.DragMouse()
 
-	fx, fy := robotgo.GetMousePos()
-	fmt.Println("FindBitmap------", fx, fy)
+	// fx, fy := robotgo.GetMousePos()
+	// fmt.Println("FindBitmap------", fx, fy)
 
 	// robotgo.DragMouse(fx, fy)
 	// leftMosueforimg("img/randomLogin.png")
@@ -20,8 +20,11 @@ func main() {
 	// leftMosueforimg("img/agree.png")
 
 	// leftMosueforimg("img/randomLogin.png")
+	// scrollup(24)
+	// _, x, y := whilescreen("img/bank_ok.png")
+	// fmt.Println("FindBitmap------", x, y)
+	saveRepo("img/bag_beer_1.png")
 
-	searchRepo()
 	for false {
 		succ := checkMainScreen()
 		if succ {
