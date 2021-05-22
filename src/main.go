@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 
 	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
@@ -73,7 +72,7 @@ func taskLogin() {
 	leftMosueforimg("img/randomLogin.png")
 
 	chooseRole(infoConfig.Role)
-	os.Exit(0)
+	robotgo.Sleep(20)
 }
 
 func taskFeatures() {
