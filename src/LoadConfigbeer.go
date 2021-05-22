@@ -21,8 +21,9 @@ func LoadConfigbeer() (config ConfigBeer, err error) {
 }
 
 type ConfigBeer struct {
-	Status   bool     `mapstructure:"status"`
-	HotKey   string   `mapstructure:"hotKey"`
-	Articles []string `mapstructure:"articles"`
-	Count    int      `mapstructure:"count"`
+	Status       bool     `mapstructure:"status"`
+	HotKey       string   `mapstructure:"hotKey"`
+	ArticlesTake []string `mapstructure:"articlesTake"`
+	ArticlesSave []string `mapstructure:"articlesSave"`
+	Count        int      `mapstructure:"count"`
 }

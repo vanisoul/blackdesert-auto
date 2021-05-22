@@ -14,17 +14,13 @@ func main() {
 	// fx, fy := robotgo.GetMousePos()
 	// fmt.Println("FindBitmap------", fx, fy)
 
-	// robotgo.DragMouse(fx, fy)
-	// leftMosueforimg("img/randomLogin.png")
-	// leftMosueforimg("img/gameStart.png")
-	// leftMosueforimg("img/agree.png")
+	beerConfig, err := LoadConfigbeer()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+		return
+	}
+	tackRepoAll(beerConfig.Count, beerConfig.ArticlesTake...)
 
-	// leftMosueforimg("img/randomLogin.png")
-	// scrollup(24)
-	// _, x, y := whilescreen("img/bank_ok.png")
-	// fmt.Println("FindBitmap------", x, y)
-	// saveRepoAll("img/bag_beer_1.png")
-	searchRepo()
 	for false {
 		succ := checkMainScreen()
 		if succ {

@@ -56,7 +56,7 @@ func tackRepoOne(quantity int, imgs ...string) (succ bool) {
 
 func tackRepoAll(quantity int, imgs ...string) (succ bool) {
 	oksucc, x, y := whilescreen("img/bank_ok.png")
-
+	takeArticleSum := 0
 	if oksucc {
 		count := 3
 		for count > 0 {
@@ -66,6 +66,11 @@ func tackRepoAll(quantity int, imgs ...string) (succ bool) {
 					takeCount(quantity)
 					// leftMosueforimg("img/bag_max.png")
 					leftMosueforimg("img/bagToBankEnter.png")
+					robotgo.Sleep(1)
+					takeArticleSum = takeArticleSum + 1
+				}
+				if takeArticleSum == len(imgs) {
+					return
 				}
 			}
 			robotgo.MoveMouse(x-148, y+131)
@@ -78,7 +83,7 @@ func tackRepoAll(quantity int, imgs ...string) (succ bool) {
 
 func saveRepoAll(imgs ...string) {
 	oksucc, x, y := whilescreen("img/bank_ok.png")
-
+	takeArticleSum := 0
 	if oksucc {
 		count := 3
 		for count > 0 {
@@ -87,6 +92,11 @@ func saveRepoAll(imgs ...string) {
 				if succright {
 					leftMosueforimg("img/bag_max.png")
 					leftMosueforimg("img/bagToBankEnter.png")
+					robotgo.Sleep(1)
+					takeArticleSum = takeArticleSum + 1
+				}
+				if takeArticleSum == len(imgs) {
+					return
 				}
 			}
 			robotgo.MoveMouse(x-3, y+151)
