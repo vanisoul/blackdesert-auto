@@ -23,4 +23,5 @@ func LoadConfigAccount() (config Config, err error) {
 type Config struct {
 	Account  string `mapstructure:"account"`
 	Password string `mapstructure:"password"`
+	FAkey    string `mapstructure:"2FAkey"`
 }

@@ -11,9 +11,9 @@ func main() {
 		log.Errorf("cannot load config:", err)
 	}
 
-	setAccPW(accConfig.Account, accConfig.Password)
+	// setAccPW(accConfig.Account, accConfig.Password)
 
-	set2FA()
+	// pwd, time := load2FA(accConfig.FAkey)
 
-	join()
+	// join()
 }
