@@ -91,7 +91,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 	defer robotgo.FreeBitmap(bit_map)
 
-	count := 200
+	count := 20
 	if len(jcount) == 1 {
 		count = int(jcount[0])
 	}
@@ -137,7 +137,7 @@ func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 	defer robotgo.FreeBitmap(bit_map)
 
-	count := 200
+	count := 20
 	if len(jcount) == 1 {
 		count = int(jcount[0])
 	}

@@ -65,7 +65,12 @@ func taskLogin() {
 		selectGraphics(infoConfig.SelectGraphics)
 	}
 
-	leftMosueforimg("img/gameStart.png")
+	gsscc, gx, gy := whilescreen("img/gameStart.png", 200)
+	if gsscc {
+		leftMosue(gx, gy)
+	} else {
+		return
+	}
 	leftMosueforimg("img/agree.png")
 
 	setSafe(accConfig.Safe)
