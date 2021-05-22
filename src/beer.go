@@ -22,6 +22,7 @@ func beerTask() {
 		leftMosueforimg("img/beerRe.png")
 		leftMosueforimg("img/beerEnter.png")
 		leftMosueforimg("img/beerReStart.png")
+		robotgo.Sleep(1)
 		searchRepo()
 		saveRepoOne(beerConfig.ArticlesSave...)
 	}
