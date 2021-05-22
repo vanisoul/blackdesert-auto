@@ -14,22 +14,30 @@ func searchRepo() {
 		log.Errorf("cannot load config:", err)
 		return
 	}
-	key := strings.Split(infoConfig.SearchNPC, "+")[1]
-	robotgo.KeyTap(key, "alt")
-	sersucc, x, y := whilescreen("img/searchNPC.png")
-	if sersucc {
-		textLocation(x-240, y, infoConfig.Repo)
-		leftMosue(x, y)
-		leftMosue(x-240, y-170)
-		robotgo.Sleep(1)
-		robotgo.KeyTap("t")
-		robotgo.Sleep(5)
-		robotgo.KeyTap("t")
-		robotgo.Sleep(1)
-		robotgo.KeyTap("control")
-		robotgo.Sleep(1)
-		robotgo.KeyTap("r")
-		leftMosueforimg("img/bank.png")
+	checkMainScreen()
+	robotgo.KeyTap("r")
+	succCheckRepo, repox, repoy := whilescreen("img/bank.png")
+	if succCheckRepo {
+		leftMosue(repox, repoy)
+	} else {
+		checkMainScreen()
+		key := strings.Split(infoConfig.SearchNPC, "+")[1]
+		robotgo.KeyTap(key, "alt")
+		sersucc, x, y := whilescreen("img/searchNPC.png")
+		if sersucc {
+			textLocation(x-240, y, infoConfig.Repo)
+			leftMosue(x, y)
+			leftMosue(x-240, y-170)
+			robotgo.Sleep(1)
+			robotgo.KeyTap("t")
+			robotgo.Sleep(5)
+			robotgo.KeyTap("t")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("control")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("r")
+			leftMosueforimg("img/bank.png")
+		}
 	}
 }
 

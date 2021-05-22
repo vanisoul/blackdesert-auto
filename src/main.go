@@ -14,12 +14,12 @@ func main() {
 	// fx, fy := robotgo.GetMousePos()
 	// fmt.Println("FindBitmap------", fx, fy)
 
-	beerConfig, err := LoadConfigbeer()
-	if err != nil {
-		log.Errorf("cannot load config:", err)
-		return
-	}
-	saveRepoAll(beerConfig.ArticlesSave...)
+	// beerConfig, err := LoadConfigbeer()
+	// if err != nil {
+	// 	log.Errorf("cannot load config:", err)
+	// 	return
+	// }
+	// saveRepoAll(beerConfig.ArticlesSave...)
 
 	for false {
 		succ := checkMainScreen()
@@ -78,7 +78,14 @@ func taskLogin() {
 
 func taskFeatures() {
 	beerTask()
-	checkMainScreen()
+	// checkMainScreen()
+	// 加熱
+	// checkMainScreen()
+	// 砍材
+	// checkMainScreen()
+	// 料理
+	// checkMainScreen()
+	// 煉金
 }
 
 func checkMainScreen() (succ bool) {
