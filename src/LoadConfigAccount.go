@@ -4,7 +4,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func LoadConfigAccount() (config Config, err error) {
+func LoadConfigAccount() (config ConfigAccount, err error) {
 	viper.AddConfigPath("./config/")
 	viper.SetConfigName("account")
 	viper.SetConfigType("json")
@@ -20,7 +20,7 @@ func LoadConfigAccount() (config Config, err error) {
 	return
 }
 
-type Config struct {
+type ConfigAccount struct {
 	Account  string `mapstructure:"account"`
 	Password string `mapstructure:"password"`
 	FAkey    string `mapstructure:"2FAkey"`

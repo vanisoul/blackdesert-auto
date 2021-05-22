@@ -1,15 +1,18 @@
 package main
 
-import (
-	"github.com/labstack/gommon/log"
-)
+import "github.com/labstack/gommon/log"
 
 func main() {
-	openGameClient()
-	accConfig, err := LoadConfigAccount()
+	infoConfig, err := LoadConfigInfo()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
 	}
+
+	openGameClient(infoConfig.GamePath)
+	// accConfig, err := LoadConfigAccount()
+	// if err != nil {
+	// 	log.Errorf("cannot load config:", err)
+	// }
 
 	// setAccPW(accConfig.Account, accConfig.Password)
 
