@@ -1,13 +1,12 @@
 package main
 
 import (
-	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
 )
 
 func main() {
-
-	robotgo.MoveMouse(1080, 383)
+	closeblack()
+	// robotgo.MoveMouse(1080, 383)
 	for false {
 		succ := checkMainScreen()
 		if succ {
@@ -20,7 +19,7 @@ func main() {
 
 func taskLogin() {
 	// joindesktop()
-	// closeblack()
+	closeblack()
 
 	infoConfig, err := LoadConfigInfo()
 	if err != nil {
