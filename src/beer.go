@@ -22,7 +22,7 @@ func beerTask() {
 		leftMosueforimg("img/beerRe.png")
 		leftMosueforimg("img/beerEnter.png")
 		leftMosueforimg("img/beerReStart.png")
-		checkMainScreen()
-		saveRepoAll(beerConfig.ArticlesSave...)
+		searchRepo()
+		saveRepoOne(beerConfig.ArticlesSave...)
 	}
 }

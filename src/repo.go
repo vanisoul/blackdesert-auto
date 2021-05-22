@@ -115,6 +115,26 @@ func saveRepoAll(imgs ...string) {
 	}
 }
 
+func saveRepoOne(imgs ...string) {
+	oksucc, x, y := whilescreen("img/bank_ok.png")
+	if oksucc {
+		count := 3
+		for count > 0 {
+			for _, img := range imgs {
+				succright := rightMosueforimgEasy(img, 3)
+				if succright {
+					leftMosueforimg("img/bag_max.png")
+					leftMosueforimg("img/bagToBankEnter.png")
+					return
+				}
+			}
+			robotgo.MoveMouse(x-3, y+151)
+			scrolldown(8)
+			count = count - 1
+		}
+	}
+}
+
 func takeCount(quantity int) {
 	robotgo.Sleep(1)
 	for _, key := range strconv.Itoa(quantity) {
