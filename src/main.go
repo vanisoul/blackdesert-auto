@@ -6,7 +6,7 @@ import (
 
 func main() {
 
-	for {
+	for false {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
@@ -29,11 +29,13 @@ func taskLogin() {
 	if err != nil {
 		log.Errorf("cannot load config:", err)
 	}
+
 	setAccPW(accConfig.Account, accConfig.Password)
 
-	// pwd, time := load2FA(accConfig.FAkey)
+	// if accConfig.FAkey != "" {
+	// 	pwd, time := load2FA(accConfig.FAkey)
+	// }
 
-	// join()
 }
 
 func taskFeatures() {
