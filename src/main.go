@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// closeblack()
-	// robotgo.MoveMouse(1297, 411-55)
+	// robotgo.MoveMouse(954, 416+40+40)
 	for {
 		succ := checkMainScreen()
 		if succ {
@@ -50,6 +50,9 @@ func taskLogin() {
 		setFA(pwd)
 	}
 	startGame()
+	if infoConfig.SelectGraphics != 0 {
+		selectGraphics(infoConfig.SelectGraphics)
+	}
 	os.Exit(0)
 }
 
@@ -71,4 +74,12 @@ func startGame() {
 			startGame()
 		}
 	}
+}
+
+func selectGraphics(grap int) {
+	succsel, x, y := whilescreen("img/selectGraphics.png")
+	if succsel {
+		leftMosue(x, y+(40*grap))
+	}
+
 }

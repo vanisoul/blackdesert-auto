@@ -24,4 +24,5 @@ type ConfigAccount struct {
 	Account  string `mapstructure:"account"`
 	Password string `mapstructure:"password"`
 	FAkey    string `mapstructure:"2FAkey"`
+	Safe     string `mspstructure:"safe"`
 }
