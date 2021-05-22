@@ -42,7 +42,7 @@ func searchRepo() {
 	}
 }
 
-func tackRepoOne(quantity int, imgs ...string) (succ bool) {
+func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 	oksucc, x, y := whilescreen("img/bank_ok.png")
 
 	if oksucc {
@@ -53,6 +53,7 @@ func tackRepoOne(quantity int, imgs ...string) (succ bool) {
 				rightMosue(articlex, articley)
 				takeCount(quantity)
 				leftMosueforimg("img/bagToBankEnter.png")
+				robotgo.Sleep(1)
 				return
 			}
 			robotgo.MoveMouse(x-148, y+131)
@@ -63,7 +64,7 @@ func tackRepoOne(quantity int, imgs ...string) (succ bool) {
 	return
 }
 
-func tackRepoAll(quantity int, imgs ...string) (succ bool) {
+func takeRepoAll(quantity int, imgs ...string) (succ bool) {
 	oksucc, x, y := whilescreen("img/bank_ok.png")
 	takeArticleSum := 0
 	if oksucc {
@@ -125,6 +126,7 @@ func saveRepoOne(imgs ...string) {
 				if succright {
 					leftMosueforimg("img/bag_max.png")
 					leftMosueforimg("img/bagToBankEnter.png")
+					robotgo.Sleep(1)
 					return
 				}
 			}
