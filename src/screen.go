@@ -81,7 +81,7 @@ func whilescreen(pngName string) (x int, y int) {
 	count := 10
 	for {
 		bit_map := robotgo.OpenBitmap(pngName)
-		fx, fy := robotgo.FindBitmap(bit_map) //查找位图
+		fx, fy := robotgo.FindBitmap(bit_map)
 		fmt.Println("FindBitmap------", fx, fy)
 		if fx != -1 && fy != -1 {
 			x = fx
