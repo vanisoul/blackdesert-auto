@@ -89,14 +89,14 @@ func taskFeatures() {
 }
 
 func checkMainScreen() (succ bool) {
-	count := 5
+	count := 3
 	for count > 0 {
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
 		robotgo.KeyTap("esc")
-		succ, _, _ = whilescreen("img/esc.png", 5)
+		succ, _, _ = whilescreen("img/esc.png", 2)
 		if succ {
 			robotgo.KeyTap("esc")
 			robotgo.Sleep(2)
