@@ -7,7 +7,6 @@ func main() {
 	if err != nil {
 		log.Errorf("cannot load config:", err)
 	}
-
 	openGameClient(infoConfig.GamePath)
 	// accConfig, err := LoadConfigAccount()
 	// if err != nil {

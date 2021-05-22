@@ -1,17 +1,19 @@
 package main
 
 import (
-	"fmt"
 	"os/exec"
 	"path/filepath"
+
+	"github.com/labstack/gommon/log"
 )
 
 func openGameClient(path string) {
 	cmd := exec.Command(filepath.Join(path, "BlackDesertLauncher.exe"))
 	_, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println("Error:", err)
+		log.Errorf("Error:", err)
 		return
 	}
 
+	whilescreen("img/gameclient.png")
 }

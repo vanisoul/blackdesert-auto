@@ -1,5 +1,9 @@
 {
     "role" : "1",
     "location" : "Heidel",
-    "path" : "D:\\BlackDesert"
+    "gamePath" : "D:\\BlackDesert",
+    "gameScreenX" : 0,
+    "gameScreenY" : 0,
+    "gameScreenW" : 1920,
+    "gameScreenH" : 1080
 }
