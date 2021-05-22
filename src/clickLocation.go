@@ -10,6 +10,7 @@ func textLocation(x int, y int, text string, args ...func()) (succ bool) {
 		fc := args[0]
 		fc()
 	}
+	robotgo.Sleep(1)
 	robotgo.TypeStr(text, 0.1)
 
 	succ = true

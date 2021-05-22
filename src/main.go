@@ -24,7 +24,7 @@ func main() {
 	// _, x, y := whilescreen("img/bank_ok.png")
 	// fmt.Println("FindBitmap------", x, y)
 	// saveRepoAll("img/bag_beer_1.png")
-	beerTask()
+	searchRepo()
 	for false {
 		succ := checkMainScreen()
 		if succ {

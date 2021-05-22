@@ -15,7 +15,7 @@ func beerTask() {
 	}
 	if beerConfig.Status {
 		searchRepo()
-		tackRepoOne(1000, "img/bank_beer_1.png")
+		tackRepoOne(beerConfig.Count, beerConfig.Articles...)
 		hot := strings.ToLower(beerConfig.HotKey)
 		robotgo.KeyTap(hot)
 		leftMosueforimg("img/beerRe.png")

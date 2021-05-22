@@ -1,4 +1,6 @@
 {
     "status" : true,
-    "hotKey" : "F1"
+    "hotKey" : "F1",
+    "articles" : ["bank_beer_1.png", "bank_beer_2.png"],
+    "count":1000
 }
