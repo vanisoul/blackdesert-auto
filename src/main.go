@@ -9,9 +9,13 @@ import (
 )
 
 func main() {
-	// closeblack()
-	// robotgo.MoveMouse(954, 416+40+40)
-	for {
+	// robotgo.DragMouse()
+
+	// fx, fy := robotgo.GetMousePos()
+	// fmt.Println("FindBitmap------", fx, fy)
+
+	// robotgo.DragMouse(fx, fy)
+	for false {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
@@ -100,10 +104,12 @@ func selectGraphics(grap int) {
 		succsel, x, y := whilescreen("img/selectGraphics.png", 1)
 		if succsel {
 			leftMosue(x, y+(40*grap))
+			return
 		}
 		succsel2, x, y := whilescreen("img/selectGraphics2.png", 1)
 		if succsel2 {
 			leftMosue(x, y+(40*grap))
+			return
 		}
 		robotgo.Sleep(1)
 		count = count - 1

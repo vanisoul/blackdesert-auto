@@ -4,8 +4,11 @@ import "github.com/go-vgo/robotgo"
 
 func leftMosue(x int, y int) {
 	robotgo.MoveMouse(x, y)
+	robotgo.SetMouseDelay(1)
 	robotgo.Sleep(1)
-	robotgo.MouseClick("left", true)
+	robotgo.MouseToggle(`down`, `left`)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`up`, `left`)
 }
 
 func leftMosueforimg(img string) (succ bool) {
@@ -13,7 +16,9 @@ func leftMosueforimg(img string) (succ bool) {
 	if succscr {
 		robotgo.MoveMouse(x, y)
 		robotgo.Sleep(1)
-		robotgo.MouseClick("left", true)
+		robotgo.MouseToggle(`down`, `left`)
+		robotgo.Sleep(1)
+		robotgo.MouseToggle(`up`, `left`)
 		succ = true
 		return
 	} else {
