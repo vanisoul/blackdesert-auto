@@ -10,6 +10,10 @@ func main() {
 	if err != nil {
 		log.Errorf("cannot load config:", err)
 	}
-	log.Infof(accConfig.Account)
-	log.Infof(accConfig.Password)
+
+	setAccPW(accConfig.Account, accConfig.Password)
+
+	set2FA()
+
+	join()
 }
