@@ -21,8 +21,10 @@ func checkCount(fmls []formula) (succ bool) {
 				if succright {
 					takeCount(fml.Lov)
 					LoVStr := fmt.Sprintf("img/%d_VoL.png", fml.Lov)
-					LoVsucc, _, _ := whilescreenEasy(LoVStr)
-					if !LoVsucc {
+					LoVsucc, _, _ := whilescreenEasy(LoVStr, 3)
+					if LoVsucc {
+						robotgo.KeyTap("esc")
+					} else {
 						succ = false
 						return
 					}
@@ -39,7 +41,6 @@ func checkCount(fmls []formula) (succ bool) {
 		}
 	}
 	return
-	return true
 }
 
 func searchRepo() {

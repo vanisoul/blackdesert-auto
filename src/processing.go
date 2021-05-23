@@ -25,14 +25,14 @@ func runTask(typeStr string, method []method) {
 		if succCount {
 			searchRepo()
 			leftMosueforimg("img/ProcessingButton.png")
-			isStr := fmt.Sprintf("img/is%s.img", typeStr)
-			notStr := fmt.Sprintf("img/not%s.img", typeStr)
+			isStr := fmt.Sprintf("img/is%s.png", typeStr)
+			notStr := fmt.Sprintf("img/not%s.png", typeStr)
 			gui, _, _ := whilescreen(isStr, 3)
 			if !gui {
 				leftMosueforimg(notStr)
 			}
 			for _, fml := range med.Formula {
-				rightMosueforimgEasy(insertStrToFilenameTail(fml.Name, "Formula"), 5)
+				processPutAll(insertStrToFilenameTail(fml.Name, "Formula"))
 			}
 			robotgo.Sleep(1)
 			leftMosueforimg("img/ProcessingStart.png")
@@ -47,4 +47,25 @@ func runTask(typeStr string, method []method) {
 			saveRepoAll(insertStrToFilenameTailArr(med.Recycle, "bag")...)
 		}
 	}
+}
+
+func processPutAll(imgs ...string) {
+	takeArticleSum := 0
+
+	count := 3
+	for count > 0 {
+		for _, img := range imgs {
+			succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bag"), 3)
+			if succright {
+				robotgo.Sleep(1)
+				takeArticleSum = takeArticleSum + 1
+			}
+			if takeArticleSum == len(imgs) {
+				return
+			}
+		}
+		scrollBagDown(8)
+		count = count - 1
+	}
+
 }
