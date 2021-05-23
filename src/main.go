@@ -24,12 +24,18 @@ func main() {
 	// }
 	// runTask("Heating", heatingConfig.Method)
 	for {
-
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
 		} else {
 			taskLogin()
+			searchRepo()
+			infoConfig, err := LoadConfigInfo()
+			if err != nil {
+				log.Errorf("cannot load config:", err)
+				return
+			}
+			saveRepoAll(infoConfig.ClearBag...)
 		}
 	}
 }
@@ -122,6 +128,7 @@ func checkMainScreen() (succ bool) {
 		}
 		count = count - 1
 	}
+	closeblack()
 	return
 }
 
