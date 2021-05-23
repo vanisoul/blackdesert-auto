@@ -58,6 +58,8 @@ func searchRepo() {
 		leftMosue(repox, repoy)
 	} else {
 		checkMainScreen()
+		// TODO : 先回家 在走到NPC 比較不會有誤差
+		// goToHome()
 		key := strings.Split(infoConfig.SearchNPC, "+")[1]
 		robotgo.KeyTap(key, "alt")
 		sersucc, x, y := whilescreen("img/searchNPC.png")
