@@ -17,13 +17,13 @@ func main() {
 	// proing, _, _ := whilescreenEasy("img/Processeding_1.png")
 	// fmt.Println(proing)
 
-	heatingConfig, err := LoadConfigheating()
-	if err != nil {
-		log.Errorf("cannot load config:", err)
-		return
-	}
-	runTask("Heating", heatingConfig.Method)
-	for false {
+	// heatingConfig, err := LoadConfigheating()
+	// if err != nil {
+	// 	log.Errorf("cannot load config:", err)
+	// 	return
+	// }
+	// runTask("Heating", heatingConfig.Method)
+	for {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
