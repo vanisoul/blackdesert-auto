@@ -13,25 +13,12 @@ func main() {
 	// fxx, fyy := robotgo.GetMousePos()
 	// fmt.Println("FindBitmap------", fxx, fyy)
 
-	// beerConfig, err := LoadConfigbeer()
-	// if err != nil {
-	// 	log.Errorf("cannot load config:", err)
-	// 	return
-	// }
-	// saveRepoAll(beerConfig.ArticlesSave...)
-	// bit := robotgo.OpenBitmap("img/3000_VoL.png")
-	// fx, fy := robotgo.FindBitmap(bit, nil, 0.1)
-	// fmt.Println("FindBitmap------", fx, fy)
-	// robotgo.MoveMouse(fx, fy)
-	// bit := robotgo.OpenBitmap("img/ProcessedClothing.png")
-	// co := 20
-	// for co > 0 {
-	// 	fx, fy := robotgo.FindBitmap(bit, nil, 0.1)
-	// 	fmt.Println("FindBitmap------", fx, fy)
-	// 	co = co - 1
-	// }
-	checkMainScreen()
-	heatingTask()
+	heatingConfig, err := LoadConfigheating()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+		return
+	}
+	runTask("Heating", heatingConfig.Method)
 	for {
 		succ := checkMainScreen()
 		if succ {
