@@ -24,6 +24,7 @@ func main() {
 	// }
 	// runTask("Heating", heatingConfig.Method)
 	for {
+
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
@@ -81,6 +82,7 @@ func taskLogin() {
 
 	chooseRole(infoConfig.Role)
 	robotgo.Sleep(30)
+	robotgo.MoveMouse(0, 0)
 }
 
 func taskFeatures() {
@@ -109,7 +111,7 @@ func checkMainScreen() (succ bool) {
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
 		robotgo.KeyTap("esc")
-		succ, _, _ = whilescreenEasy("img/esc.png", 2)
+		succ, _, _ = whilescreen("img/esc.png", 2)
 		if succ {
 			robotgo.MoveMouse(0, 0)
 			robotgo.KeyTap("esc")
