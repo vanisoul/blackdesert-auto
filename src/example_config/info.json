@@ -11,5 +11,5 @@
     "repo" : "阿梅里葛",
     "drinkingOnTheWayToWork" : 1,
     "processedTimeSec" : 3600,
-    "clearBag":["img/Steel.png","img/IronFragments.png","img/IronBlock.png","img/CopperBlock.png","img/CopperFragments.png","img/ZinBlock.png","img/ZinFragments.png","img/brass.png","img/TinBlock.png","img/TinFragments.png","img/bronze.png","img/VanadiumFragments.png","img/VanadiumBlock.png","img/TitaniteFragments.png","img/TitaniteBlock.png"]
+    "clearBag":["img/Steel.png","img/IronFragments.png","img/IronBlock.png","img/CopperBlock.png","img/CopperFragments.png","img/ZinBlock.png","img/ZinFragments.png","img/brass.png","img/TinBlock.png","img/TinFragments.png","img/bronze.png","img/VanadiumFragments.png","img/VanadiumBlock.png","img/TitaniteFragments.png","img/TitaniteBlock.png","img/Beer.png", "img/GrilledChicken.png"]
 }
