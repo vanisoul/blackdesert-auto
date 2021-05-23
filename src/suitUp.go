@@ -12,7 +12,7 @@ func suitUpArms(arms ...string) {
 		robotgo.KeyTap("i")
 	}
 	succbagui, _, _ := whilescreen("img/isPearl.png", 3)
-	if !succbagui {
+	if succbagui {
 		leftMosueforimg("img/notBag.png")
 	}
 	count := 3
@@ -38,7 +38,7 @@ func suitUpPearlArms(pearlArms ...string) {
 		robotgo.KeyTap("i")
 	}
 	succbagui, _, _ := whilescreen("img/isBag.png", 3)
-	if !succbagui {
+	if succbagui {
 		leftMosueforimg("img/notPearl.png")
 	}
 	count := 3
