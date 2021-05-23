@@ -10,8 +10,8 @@ import (
 func main() {
 	// robotgo.DragMouse()
 
-	// fx, fy := robotgo.GetMousePos()
-	// fmt.Println("FindBitmap------", fx, fy)
+	// fxx, fyy := robotgo.GetMousePos()
+	// fmt.Println("FindBitmap------", fxx, fyy)
 
 	// beerConfig, err := LoadConfigbeer()
 	// if err != nil {
@@ -19,7 +19,12 @@ func main() {
 	// 	return
 	// }
 	// saveRepoAll(beerConfig.ArticlesSave...)
-
+	// bit := robotgo.OpenBitmap("img/3000_VoL.png")
+	// fx, fy := robotgo.FindBitmap(bit, nil, 0.1)
+	// fmt.Println("FindBitmap------", fx, fy)
+	// robotgo.MoveMouse(fx, fy)
+	checkMainScreen()
+	heatingTask()
 	for false {
 		succ := checkMainScreen()
 		if succ {

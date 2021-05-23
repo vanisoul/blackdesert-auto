@@ -7,11 +7,11 @@ import (
 func suitUpArms(arms ...string) {
 
 	robotgo.Sleep(1)
-	succarmsui, _, _ := whilescreen("img/arms_ok.png")
+	succarmsui, _, _ := whilescreen("img/arms_ok.png", 3)
 	if !succarmsui {
 		robotgo.KeyTap("i")
 	}
-	succbagui, _, _ := whilescreen("img/isPearl.png")
+	succbagui, _, _ := whilescreen("img/isPearl.png", 3)
 	if !succbagui {
 		leftMosueforimg("img/notBag.png")
 	}
@@ -33,11 +33,11 @@ func suitUpArms(arms ...string) {
 func suitUpPearlArms(pearlArms ...string) {
 
 	robotgo.Sleep(1)
-	succarmsui, _, _ := whilescreen("img/arms_ok.png")
+	succarmsui, _, _ := whilescreen("img/arms_ok.png", 3)
 	if !succarmsui {
 		robotgo.KeyTap("i")
 	}
-	succbagui, _, _ := whilescreen("img/isBag.png")
+	succbagui, _, _ := whilescreen("img/isBag.png", 3)
 	if !succbagui {
 		leftMosueforimg("img/notPearl.png")
 	}

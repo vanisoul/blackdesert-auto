@@ -26,7 +26,7 @@ func runTask(typeStr string, method []method) {
 			leftMosueforimg("img/ProcessingButton.png")
 			isStr := fmt.Sprintf("img/is%s.img", typeStr)
 			notStr := fmt.Sprintf("img/not%s.img", typeStr)
-			gui, _, _ := whilescreen(isStr)
+			gui, _, _ := whilescreen(isStr, 3)
 			if !gui {
 				leftMosueforimg(notStr)
 			}
@@ -43,7 +43,7 @@ func runTask(typeStr string, method []method) {
 			robotgo.KeyTap("space")
 			robotgo.Sleep(3)
 			searchRepo()
-			saveRepoAll(med.Recycle...)
+			saveRepoAll(insertStrToFilenameTailArr(med.Recycle, "bag")...)
 		}
 	}
 }

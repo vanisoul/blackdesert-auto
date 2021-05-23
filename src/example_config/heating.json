@@ -7,11 +7,11 @@
             "formula" : [
                 {
                     "name" : "img/IronFragments.png",
-                    "LoV"  : "img/LackValue.png"
+                    "LoV"  : 3000
                 },
                 {
                     "name" : "img/Coal.png",
-                    "LoV"  : "img/LackValue.png"
+                    "LoV"  : 3000
                 }
             ],
             "recycle" : ["img/Steel.png"]
@@ -19,10 +19,10 @@
             "formula" : [
                 {
                     "name" : "img/IronOre.png",
-                    "LoV"  : "img/LackValue.png"
+                    "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/IronFragments.png"]
+            "recycle" : ["img/IronFragments.png","img/IronBlock.png"]
         }
     ]
 }

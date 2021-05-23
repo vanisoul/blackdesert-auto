@@ -21,7 +21,7 @@ func checkCount(fmls []formula) (succ bool) {
 				if succright {
 					takeCount(fml.Lov)
 					LoVStr := fmt.Sprintf("img/%d_VoL.png", fml.Lov)
-					LoVsucc, _, _ := whilescreen(LoVStr)
+					LoVsucc, _, _ := whilescreenEasy(LoVStr)
 					if !LoVsucc {
 						succ = false
 						return
@@ -81,7 +81,8 @@ func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 	if oksucc {
 		count := 3
 		for count > 0 {
-			succarticle, articlex, articley := whilescreenManyEasy(3, insertStrToFilenameTailArr(imgs, "bank")...)
+			newImgs := insertStrToFilenameTailArr(imgs, "bank")
+			succarticle, articlex, articley := whilescreenManyEasy(3, newImgs...)
 			if succarticle {
 				rightMosue(articlex, articley)
 				takeCount(quantity)

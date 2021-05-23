@@ -11,7 +11,7 @@ func insertStrToFilenameTailArr(strs []string, taillStr string) (res []string) {
 	for _, str := range strs {
 
 		ext := path.Ext(str)
-		name := strings.ReplaceAll(path.Base(str), ext, "")
+		name := strings.ReplaceAll(str, ext, "")
 		strAnswer := fmt.Sprintf("%s_%s%s", name, taillStr, ext)
 		newstrs = append(newstrs, strAnswer)
 	}
@@ -22,7 +22,7 @@ func insertStrToFilenameTailArr(strs []string, taillStr string) (res []string) {
 func insertStrToFilenameTail(str string, taillStr string) (res string) {
 
 	ext := path.Ext(str)
-	name := strings.ReplaceAll(path.Base(str), ext, "")
+	name := strings.ReplaceAll(str, ext, "")
 	res = fmt.Sprintf("%s_%s%s", name, taillStr, ext)
 
 	return
