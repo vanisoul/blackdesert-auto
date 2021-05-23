@@ -22,7 +22,11 @@ func beerTask() {
 		robotgo.KeyTap(hot)
 		leftMosueforimg("img/beerRe.png")
 		leftMosueforimg("img/beerEnter.png")
-		leftMosueforimg("img/beerReStart.png")
+		robotgo.Sleep(3)
+		restrsucc, x, y := whilescreenMany(20, "img/beerReStart.png", "img/beerReStart2.png")
+		if restrsucc {
+			leftMosue(x, y)
+		}
 		robotgo.Sleep(1)
 		searchRepo()
 		saveRepoOne(beerConfig.ArticlesSave...)
