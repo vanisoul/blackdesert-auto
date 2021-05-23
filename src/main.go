@@ -89,8 +89,12 @@ func taskFeatures() {
 	checkMainScreen()
 	// 加熱
 	heatingTask()
-	// checkMainScreen()
+	checkMainScreen()
+	//勞工恢復體力
+	beerTask()
+	checkMainScreen()
 	// 砍材
+	chopWoodTask()
 	// checkMainScreen()
 	// 料理
 	// checkMainScreen()
