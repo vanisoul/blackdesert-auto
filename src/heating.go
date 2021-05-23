@@ -10,15 +10,5 @@ func heatingTask() {
 		log.Errorf("cannot load config:", err)
 		return
 	}
-	if heatingConfig.Status {
-		suitUpArms(heatingConfig.Arms...)
-		suitUpPearlArms(heatingConfig.PearlArms...)
-		checkMainScreen()
-		searchRepo()
-		runHeating()
-	}
-}
-
-func runHeating() {
-
+	processingTask(heatingConfig.Status, "Heating", heatingConfig.Arms, heatingConfig.PearlArms, heatingConfig.Method)
 }

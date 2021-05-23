@@ -1,12 +1,46 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
 	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
 )
+
+func checkCount(fmls []formula) (succ bool) {
+	searchRepo()
+	oksucc, _, _ := whilescreen("img/bank_ok.png")
+	takeArticleSum := 0
+	if oksucc {
+		count := 3
+		for count > 0 {
+			for _, fml := range fmls {
+				succright := rightMosueforimgEasy(insertStrToFilenameTail(fml.Name, "bank"), 3)
+				if succright {
+					takeCount(fml.Lov)
+					LoVStr := fmt.Sprintf("img/%d_VoL.png", fml.Lov)
+					LoVsucc, _, _ := whilescreen(LoVStr)
+					if !LoVsucc {
+						succ = false
+						return
+					}
+					robotgo.Sleep(1)
+					takeArticleSum = takeArticleSum + 1
+				}
+				if takeArticleSum == len(fmls) {
+					succ = true
+					return
+				}
+			}
+			scrollBankDown(8)
+			count = count - 1
+		}
+	}
+	return
+	return true
+}
 
 func searchRepo() {
 	infoConfig, err := LoadConfigInfo()
