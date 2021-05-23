@@ -80,7 +80,7 @@ func taskLogin() {
 	leftMosueforimg("img/randomLogin.png")
 
 	chooseRole(infoConfig.Role)
-	robotgo.Sleep(20)
+	robotgo.Sleep(30)
 }
 
 func taskFeatures() {
@@ -109,7 +109,7 @@ func checkMainScreen() (succ bool) {
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
 		robotgo.KeyTap("esc")
-		succ, _, _ = whilescreen("img/esc.png", 2)
+		succ, _, _ = whilescreenEasy("img/esc.png", 2)
 		if succ {
 			robotgo.MoveMouse(0, 0)
 			robotgo.KeyTap("esc")
