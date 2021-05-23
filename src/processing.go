@@ -51,7 +51,6 @@ func runTask(typeStr string, method []method) {
 
 func processPutAll(imgs ...string) {
 	takeArticleSum := 0
-
 	count := 3
 	for count > 0 {
 		for _, img := range imgs {
@@ -64,8 +63,14 @@ func processPutAll(imgs ...string) {
 				return
 			}
 		}
-		scrollBagDown(8)
+		scrollProcessDown(8)
 		count = count - 1
 	}
 
+}
+
+func scrollProcessDown(fre int) {
+	_, x, y := whilescreen("img/ProcessingOK.png")
+	robotgo.MoveMouse(x+41, y+103)
+	scrolldown(fre)
 }

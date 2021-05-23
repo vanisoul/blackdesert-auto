@@ -12,14 +12,15 @@ func main() {
 
 	// fxx, fyy := robotgo.GetMousePos()
 	// fmt.Println("FindBitmap------", fxx, fyy)
-
-	heatingConfig, err := LoadConfigheating()
-	if err != nil {
-		log.Errorf("cannot load config:", err)
-		return
-	}
-	runTask("Heating", heatingConfig.Method)
-	for {
+	// _, fx, fy := whilescreen("img/ProcessingOK.png")
+	// fmt.Println("FindBitmap------", fx, fy)
+	// heatingConfig, err := LoadConfigheating()
+	// if err != nil {
+	// 	log.Errorf("cannot load config:", err)
+	// 	return
+	// }
+	// runTask("Heating", heatingConfig.Method)
+	for false {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
