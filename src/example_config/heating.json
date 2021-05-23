@@ -1,0 +1,28 @@
+{
+    "status" : true,
+    "arms":["a","b"],
+    "pearlArms":["c","d"],
+    "method":[
+        {
+            "formula" : [
+                {
+                    "name" : "img/IronFragments.png",
+                    "LoV"  : "img/LackValue.png"
+                },
+                {
+                    "name" : "img/Coal.png",
+                    "LoV"  : "img/LackValue.png"
+                }
+            ],
+            "recycle" : ["img/Steel.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/IronOre.png",
+                    "LoV"  : "img/LackValue.png"
+                }
+            ],
+            "recycle" : ["img/IronFragments.png"]
+        }
+    ]
+}

@@ -20,7 +20,15 @@ func main() {
 	// }
 	// saveRepoAll(beerConfig.ArticlesSave...)
 
-	for {
+	heatingConfig, err := LoadConfigheating()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+		return
+	}
+
+	fmt.Println(heatingConfig.Status)
+
+	for false {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()
@@ -81,9 +89,11 @@ func taskLogin() {
 }
 
 func taskFeatures() {
+	//勞工恢復體力
 	beerTask()
-	// checkMainScreen()
+	checkMainScreen()
 	// 加熱
+	heatingTask()
 	// checkMainScreen()
 	// 砍材
 	// checkMainScreen()

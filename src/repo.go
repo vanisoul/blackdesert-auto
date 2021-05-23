@@ -15,7 +15,6 @@ func searchRepo() {
 		return
 	}
 	log.Info("searchRepo")
-	checkMainScreen()
 	robotgo.KeyTap("r")
 	succCheckRepo, repox, repoy := whilescreen("img/bank.png", 2)
 	if succCheckRepo {
