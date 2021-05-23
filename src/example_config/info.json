@@ -9,5 +9,6 @@
     "gameScreenH" : 1080,
     "searchNPC" : "alt+m",
     "repo" : "阿梅里葛",
-    "drinkingOnTheWayToWork" : 2
+    "drinkingOnTheWayToWork" : 1,
+    "processedTimeSec" : 3600
 }

@@ -120,6 +120,33 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 }
 
+func screenYesOrNoEasy(pngName string, jcount ...int) (succ bool) {
+	bit_map := robotgo.OpenBitmap(pngName)
+	defer robotgo.FreeBitmap(bit_map)
+	count := 20
+	if len(jcount) == 1 {
+		count = int(jcount[0])
+	}
+	log.Info("screen", pngName)
+	log.Info("count", count)
+	for {
+		robotgo.Sleep(1)
+
+		fx, fy := robotgo.FindBitmap(bit_map, nil, 0.1)
+
+		fmt.Println("FindBitmap------", fx, fy)
+		if fx != -1 && fy != -1 {
+			succ = true
+			return
+		}
+		count = count - 1
+		if count == 0 {
+			succ = false
+			return
+		}
+	}
+}
+
 func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 	file, _ := os.Open(pngName)

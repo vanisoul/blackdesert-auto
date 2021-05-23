@@ -27,10 +27,16 @@ func runTask(typeStr string, method []method) {
 		return
 	}
 	tmpDrinkToWork := 0
-	// infoConfig.DrinkingOnTheWayToWork
 	for _, med := range method {
 		succCount := checkCount(med.Formula)
 		if succCount {
+
+			if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
+				checkMainScreen()
+				beerTask()
+				tmpDrinkToWork = 0
+			}
+
 			searchRepo()
 			leftMosueforimg("img/ProcessingButton.png")
 			isStr := fmt.Sprintf("img/is%s.png", typeStr)
@@ -45,11 +51,21 @@ func runTask(typeStr string, method []method) {
 			robotgo.Sleep(1)
 			leftMosueforimg("img/ProcessingStart.png")
 			proing := true
+
+			tmpTimeSec := 0
 			for proing {
-				proing, _, _ = whilescreenEasy("img/Processeding_1.png")
-				if !proing {
+				proing = screenYesOrNoEasy("img/Processeding_1.png", 20)
+				if proing {
+					tmpTimeSec = tmpTimeSec + 1
+				} else {
+					tmpTimeSec = tmpTimeSec + 20
 					checkMainScreen()
-					proing, _, _ = whilescreenEasy("img/Processeding_1.png")
+					tmpTimeSec = tmpTimeSec + 3
+					proing = screenYesOrNoEasy("img/Processeding_1.png", 20)
+					tmpTimeSec = tmpTimeSec + 1
+				}
+				if tmpTimeSec == infoConfig.ProcessedTimeSec {
+					break
 				}
 			}
 			checkMainScreen()
@@ -58,11 +74,6 @@ func runTask(typeStr string, method []method) {
 			searchRepo()
 			saveRepoAll(med.Recycle...)
 			tmpDrinkToWork = tmpDrinkToWork + 1
-			if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
-				checkMainScreen()
-				beerTask()
-				tmpDrinkToWork = 0
-			}
 		}
 	}
 }

@@ -32,4 +32,5 @@ type ConfigInfo struct {
 	SearchNPC              string `mapstructure:"searchNPC"`
 	Repo                   string `mapstructure:"repo"`
 	DrinkingOnTheWayToWork int    `mapstructure:"drinkingOnTheWayToWork"`
+	ProcessedTimeSec       int    `mapstructure:"processedTimeSec"`
 }
