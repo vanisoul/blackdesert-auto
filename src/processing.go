@@ -38,13 +38,13 @@ func runTask(typeStr string, method []method) {
 			leftMosueforimg("img/ProcessingStart.png")
 			proing := true
 			for proing {
-				proing, _, _ = whilescreen("img/Processeding_1.png")
+				proing, _, _ = whilescreenEasy("img/Processeding_1.png")
 			}
 			checkMainScreen()
 			robotgo.KeyTap("space")
 			robotgo.Sleep(3)
 			searchRepo()
-			saveRepoAll(insertStrToFilenameTailArr(med.Recycle, "bag")...)
+			saveRepoAll(med.Recycle...)
 		}
 	}
 }
