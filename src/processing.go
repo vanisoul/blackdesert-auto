@@ -10,7 +10,7 @@ func processingTask(status bool, typeStr string, arms []string, pearlArms []stri
 
 	if status {
 		suitUpArms(arms...)
-		robotgo.Sleep(1)
+		checkMainScreen()
 		suitUpPearlArms(pearlArms...)
 		checkMainScreen()
 		runTask(typeStr, method)

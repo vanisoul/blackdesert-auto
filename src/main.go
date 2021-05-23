@@ -116,8 +116,9 @@ func checkMainScreen() (succ bool) {
 		robotgo.KeyTap("esc")
 		succ, _, _ = whilescreen("img/esc.png", 2)
 		if succ {
+			robotgo.MoveMouse(0, 0)
 			robotgo.KeyTap("esc")
-			robotgo.Sleep(2)
+			robotgo.Sleep(1)
 			return
 		}
 		count = count - 1
