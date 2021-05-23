@@ -1,3 +1,11 @@
+# 物品分為三種類
+insertStrToFilenameTailArr(imgs, "type")
+insertStrToFilenameTail(img, "type")
+type :
+    bag 背包上的物品樣式
+    bank 銀行上的物品樣式
+    Formula 加工時的物品樣式
+
 # 等待某個畫面出現
 whilescreen(img string)
 => x y 

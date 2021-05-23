@@ -47,7 +47,7 @@ func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 	if oksucc {
 		count := 3
 		for count > 0 {
-			succarticle, articlex, articley := whilescreenManyEasy(3, imgs...)
+			succarticle, articlex, articley := whilescreenManyEasy(3, insertStrToFilenameTailArr(imgs, "bank")...)
 			if succarticle {
 				rightMosue(articlex, articley)
 				takeCount(quantity)
@@ -70,7 +70,7 @@ func takeRepoAll(quantity int, imgs ...string) (succ bool) {
 		count := 3
 		for count > 0 {
 			for _, img := range imgs {
-				succright := rightMosueforimgEasy(img, 3)
+				succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bank"), 3)
 				if succright {
 					takeCount(quantity)
 					// leftMosueforimg("img/bag_max.png")
@@ -97,7 +97,7 @@ func saveRepoAll(imgs ...string) {
 		count := 3
 		for count > 0 {
 			for _, img := range imgs {
-				succright := rightMosueforimgEasy(img, 3)
+				succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bag"), 3)
 				if succright {
 					leftMosueforimg("img/bag_max.png")
 					leftMosueforimg("img/bagToBankEnter.png")
@@ -120,14 +120,13 @@ func saveRepoOne(imgs ...string) {
 	if oksucc {
 		count := 3
 		for count > 0 {
-			for _, img := range imgs {
-				succright := rightMosueforimgEasy(img, 3)
-				if succright {
-					leftMosueforimg("img/bag_max.png")
-					leftMosueforimg("img/bagToBankEnter.png")
-					robotgo.Sleep(1)
-					return
-				}
+			succarticle, articlex, articley := whilescreenManyEasy(3, insertStrToFilenameTailArr(imgs, "bag")...)
+			if succarticle {
+				rightMosue(articlex, articley)
+				leftMosueforimg("img/bag_max.png")
+				leftMosueforimg("img/bagToBankEnter.png")
+				robotgo.Sleep(1)
+				return
 			}
 			robotgo.MoveMouse(x-3, y+151)
 			scrolldown(8)

@@ -11,6 +11,14 @@ func heatingTask() {
 		return
 	}
 	if heatingConfig.Status {
+		suitUpArms(heatingConfig.Arms...)
+		suitUpPearlArms(heatingConfig.PearlArms...)
+		checkMainScreen()
 		searchRepo()
+		runHeating()
 	}
+}
+
+func runHeating() {
+
 }

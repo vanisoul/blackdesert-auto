@@ -1,7 +1,7 @@
 {
     "status" : true,
     "hotKey" : "F1",
-    "articlesTake" : ["img/bank_beer_1.png", "img/bank_beer_2.png"],
-    "articlesSave" : ["img/bag_beer_1.png", "img/bag_beer_2.png"],
+    "articlesTake" : ["img/Beer.png", "img/GrilledChicken.png"],
+    "articlesSave" : ["img/Beer.png", "img/GrilledChicken.png"],
     "count":1000
 }

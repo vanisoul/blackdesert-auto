@@ -15,6 +15,7 @@ func beerTask() {
 	}
 	if beerConfig.Status {
 		searchRepo()
+
 		takeRepoOne(beerConfig.Count, beerConfig.ArticlesTake...)
 		checkMainScreen()
 		hot := strings.ToLower(beerConfig.HotKey)

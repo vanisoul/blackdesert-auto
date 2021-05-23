@@ -1,7 +1,7 @@
 {
     "status" : true,
-    "arms":["a","b"],
-    "pearlArms":["c","d"],
+    "arms":["img/HeatingStone.png","img/ProcessedClothing.png"],
+    "pearlArms":["ProcessingSetGloves.png","ProcessingSetDress.png","ProcessingSetHeadwear.png","ProcessingSetShoes.png"],
     "method":[
         {
             "formula" : [

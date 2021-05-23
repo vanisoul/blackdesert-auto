@@ -20,14 +20,6 @@ func main() {
 	// }
 	// saveRepoAll(beerConfig.ArticlesSave...)
 
-	heatingConfig, err := LoadConfigheating()
-	if err != nil {
-		log.Errorf("cannot load config:", err)
-		return
-	}
-
-	fmt.Println(heatingConfig.Status)
-
 	for false {
 		succ := checkMainScreen()
 		if succ {
