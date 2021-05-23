@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/go-vgo/robotgo"
+	"github.com/labstack/gommon/log"
 )
 
 func processingTask(status bool, typeStr string, arms []string, pearlArms []string, method []method) {
@@ -20,6 +21,13 @@ func processingTask(status bool, typeStr string, arms []string, pearlArms []stri
 func runTask(typeStr string, method []method) {
 	// heatingConfig.Method[0].Formula[0].Name
 	// heatingConfig.Method[0].Formula[0].Lov
+	infoConfig, err := LoadConfigInfo()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+		return
+	}
+	tmpDrinkToWork := 0
+	// infoConfig.DrinkingOnTheWayToWork
 	for _, med := range method {
 		succCount := checkCount(med.Formula)
 		if succCount {
@@ -39,12 +47,22 @@ func runTask(typeStr string, method []method) {
 			proing := true
 			for proing {
 				proing, _, _ = whilescreenEasy("img/Processeding_1.png")
+				if !proing {
+					checkMainScreen()
+					proing, _, _ = whilescreenEasy("img/Processeding_1.png")
+				}
 			}
 			checkMainScreen()
 			robotgo.KeyTap("space")
 			robotgo.Sleep(3)
 			searchRepo()
 			saveRepoAll(med.Recycle...)
+			tmpDrinkToWork = tmpDrinkToWork + 1
+			if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
+				checkMainScreen()
+				beerTask()
+				tmpDrinkToWork = 0
+			}
 		}
 	}
 }
