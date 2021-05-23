@@ -27,9 +27,9 @@ func runTask(typeStr string, method []method) {
 			leftMosueforimg("img/ProcessingButton.png")
 			isStr := fmt.Sprintf("img/is%s.png", typeStr)
 			notStr := fmt.Sprintf("img/not%s.png", typeStr)
-			gui, _, _ := whilescreen(isStr, 3)
+			gui, _, _ := whilescreenEasy(isStr, 3)
 			if !gui {
-				leftMosueforimg(notStr)
+				leftMosueforimgEasy(notStr)
 			}
 			for _, fml := range med.Formula {
 				processPutAll(fml.Name)
