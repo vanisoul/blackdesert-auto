@@ -7,11 +7,11 @@ import (
 func suitUpArms(arms ...string) {
 
 	robotgo.Sleep(1)
-	succarmsui, _, _ := whilescreen("img/arms_ok.png", 3)
+	succarmsui, _, _ := whilescreenEasy("img/arms_ok.png", 3)
 	if !succarmsui {
 		robotgo.KeyTap("i")
 	}
-	succbagui, _, _ := whilescreen("img/isPearl.png", 3)
+	succbagui, _, _ := whilescreenEasy("img/isPearl.png", 3)
 	if succbagui {
 		leftMosueforimg("img/notBag.png")
 	}
@@ -19,7 +19,7 @@ func suitUpArms(arms ...string) {
 	tmpfre := 0
 	for count > 0 {
 		robotgo.Sleep(1)
-		_, fre := rightMosueforimgEasyAll(arms, 3)
+		_, fre := rightMosueforimgEasyAll(arms, 10)
 		tmpfre = tmpfre + fre
 		if tmpfre == len(arms) {
 			return
@@ -33,13 +33,13 @@ func suitUpArms(arms ...string) {
 func suitUpPearlArms(pearlArms ...string) {
 
 	robotgo.Sleep(1)
-	succarmsui, _, _ := whilescreen("img/arms_ok.png", 3)
+	succarmsui, _, _ := whilescreenEasy("img/arms_ok.png", 3)
 	if !succarmsui {
 		robotgo.KeyTap("i")
 	}
-	succbagui, _, _ := whilescreen("img/isBag.png", 3)
+	succbagui, _, _ := whilescreenEasy("img/isBag.png", 3)
 	if succbagui {
-		leftMosueforimg("img/notPearl.png")
+		leftMosueforimgEasy("img/notPearl.png")
 	}
 	count := 3
 	tmpfre := 0

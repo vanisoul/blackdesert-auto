@@ -23,9 +23,16 @@ func main() {
 	// fx, fy := robotgo.FindBitmap(bit, nil, 0.1)
 	// fmt.Println("FindBitmap------", fx, fy)
 	// robotgo.MoveMouse(fx, fy)
+	// bit := robotgo.OpenBitmap("img/ProcessedClothing.png")
+	// co := 20
+	// for co > 0 {
+	// 	fx, fy := robotgo.FindBitmap(bit, nil, 0.1)
+	// 	fmt.Println("FindBitmap------", fx, fy)
+	// 	co = co - 1
+	// }
 	checkMainScreen()
 	heatingTask()
-	for false {
+	for {
 		succ := checkMainScreen()
 		if succ {
 			taskFeatures()

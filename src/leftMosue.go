@@ -14,18 +14,36 @@ func leftMosue(x int, y int) {
 func leftMosueforimg(img string) (succ bool) {
 	succscr, x, y := whilescreen(img)
 	if succscr {
-		robotgo.Sleep(1)
-		robotgo.MoveMouse(x, y)
-		robotgo.Sleep(1)
-		robotgo.MouseToggle(`down`, `left`)
-		robotgo.Sleep(1)
-		robotgo.MouseToggle(`up`, `left`)
+		leftMosueforimgFunc(x, y)
 		succ = true
 		return
 	} else {
 		succ = false
 		return
 	}
+}
+
+func leftMosueforimgEasy(img string) (succ bool) {
+	succscr, x, y := whilescreenEasy(img)
+	if succscr {
+		leftMosueforimgFunc(x, y)
+		succ = true
+		return
+	} else {
+		succ = false
+		return
+	}
+}
+
+func leftMosueforimgFunc(x int, y int) (succ bool) {
+	robotgo.Sleep(1)
+	robotgo.MoveMouse(x, y)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`down`, `left`)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`up`, `left`)
+	succ = true
+	return
 }
 
 func rightMosue(x int, y int) {

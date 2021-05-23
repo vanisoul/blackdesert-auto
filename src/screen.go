@@ -79,7 +79,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 	file, _ := os.Open(pngName)
 	c, _, err := image.DecodeConfig(file)
 	if err != nil {
-		log.Errorf("load pngName Error:", err)
+		log.Errorf("load pngName Error:%s, pngName: %s", err, pngName)
 		file.Close()
 		return
 	}
@@ -98,7 +98,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 	log.Info("screen", pngName)
 	log.Info("count", count)
 	for {
-		robotgo.Sleep(2)
+		robotgo.Sleep(1)
 
 		fx, fy := robotgo.FindBitmap(bit_map)
 
@@ -125,7 +125,7 @@ func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
 	file, _ := os.Open(pngName)
 	c, _, err := image.DecodeConfig(file)
 	if err != nil {
-		log.Errorf("load pngName Error:", err)
+		log.Errorf("load pngName Error:%s, pngName: %s", err, pngName)
 		file.Close()
 		return
 	}
@@ -144,7 +144,7 @@ func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
 	log.Info("screen", pngName)
 	log.Info("count", count)
 	for {
-		robotgo.Sleep(2)
+		robotgo.Sleep(1)
 
 		fx, fy := robotgo.FindBitmap(bit_map, nil, 0.1)
 
