@@ -38,9 +38,26 @@ func rightMosue(x int, y int) {
 }
 
 func rightMosueforimg(img string, count int) (succ bool) {
-
 	succscr, x, y := whilescreen(img, count)
-	succ = rightMosueforimgFunc(succscr, x, y)
+	if succscr {
+		rightMosueforimgFunc(succscr, x, y)
+		succ = true
+	} else {
+		succ = false
+	}
+	return
+}
+
+func rightMosueforimgEasyAll(imgs []string, count int) (succ bool) {
+	for _, img := range imgs {
+		succscr, x, y := whilescreenEasy(img, count)
+		if succscr {
+			rightMosueforimgFunc(succscr, x, y)
+		} else {
+			succ = false
+		}
+	}
+	succ = true
 	return
 }
 
@@ -52,16 +69,11 @@ func rightMosueforimgEasy(img string, count int) (succ bool) {
 }
 
 func rightMosueforimgFunc(succsrc bool, x int, y int) (succ bool) {
-	if succsrc {
-		robotgo.MoveMouse(x, y)
-		robotgo.Sleep(1)
-		robotgo.MouseToggle(`down`, `right`)
-		robotgo.Sleep(1)
-		robotgo.MouseToggle(`up`, `right`)
-		succ = true
-		return
-	} else {
-		succ = false
-		return
-	}
+	robotgo.MoveMouse(x, y)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`down`, `right`)
+	robotgo.Sleep(1)
+	robotgo.MouseToggle(`up`, `right`)
+	succ = true
+	return
 }

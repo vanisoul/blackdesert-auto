@@ -42,7 +42,7 @@ func searchRepo() {
 }
 
 func takeRepoOne(quantity int, imgs ...string) (succ bool) {
-	oksucc, x, y := whilescreen("img/bank_ok.png")
+	oksucc, _, _ := whilescreen("img/bank_ok.png")
 
 	if oksucc {
 		count := 3
@@ -55,8 +55,7 @@ func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 				robotgo.Sleep(1)
 				return
 			}
-			robotgo.MoveMouse(x-148, y+131)
-			scrolldown(6)
+			scrollBankDown(8)
 			count = count - 1
 		}
 	}
@@ -64,7 +63,7 @@ func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 }
 
 func takeRepoAll(quantity int, imgs ...string) (succ bool) {
-	oksucc, x, y := whilescreen("img/bank_ok.png")
+	oksucc, _, _ := whilescreen("img/bank_ok.png")
 	takeArticleSum := 0
 	if oksucc {
 		count := 3
@@ -82,8 +81,7 @@ func takeRepoAll(quantity int, imgs ...string) (succ bool) {
 					return
 				}
 			}
-			robotgo.MoveMouse(x-148, y+131)
-			scrolldown(6)
+			scrollBankDown(8)
 			count = count - 1
 		}
 	}
@@ -91,7 +89,7 @@ func takeRepoAll(quantity int, imgs ...string) (succ bool) {
 }
 
 func saveRepoAll(imgs ...string) {
-	oksucc, x, y := whilescreen("img/bank_ok.png")
+	oksucc, _, _ := whilescreen("img/bank_ok.png")
 	takeArticleSum := 0
 	if oksucc {
 		count := 3
@@ -108,15 +106,14 @@ func saveRepoAll(imgs ...string) {
 					return
 				}
 			}
-			robotgo.MoveMouse(x-3, y+151)
-			scrolldown(8)
+			scrollBagDown(8)
 			count = count - 1
 		}
 	}
 }
 
 func saveRepoOne(imgs ...string) {
-	oksucc, x, y := whilescreen("img/bank_ok.png")
+	oksucc, _, _ := whilescreen("img/bank_ok.png")
 	if oksucc {
 		count := 3
 		for count > 0 {
@@ -128,8 +125,7 @@ func saveRepoOne(imgs ...string) {
 				robotgo.Sleep(1)
 				return
 			}
-			robotgo.MoveMouse(x-3, y+151)
-			scrolldown(8)
+			scrollBagDown(8)
 			count = count - 1
 		}
 	}
