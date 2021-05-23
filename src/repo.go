@@ -46,6 +46,7 @@ func checkCount(fmls []formula) (succ bool) {
 }
 
 func searchRepo() {
+	checkMainScreen()
 	infoConfig, err := LoadConfigInfo()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
