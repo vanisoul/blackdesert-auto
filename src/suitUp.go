@@ -17,7 +17,6 @@ func suitUpArms(arms ...string) {
 	count := 3
 	tmpfre := 0
 	for count > 0 {
-		robotgo.Sleep(1)
 		_, fre := rightMosueforimgEasyAll(arms, 10)
 		tmpfre = tmpfre + fre
 		if tmpfre == len(arms) {
@@ -42,7 +41,6 @@ func suitUpPearlArms(pearlArms ...string) {
 	count := 3
 	tmpfre := 0
 	for count > 0 {
-		robotgo.Sleep(1)
 		_, fre := rightMosueforimgEasyAll(pearlArms, 3)
 		tmpfre = tmpfre + fre
 		if tmpfre == len(pearlArms) {

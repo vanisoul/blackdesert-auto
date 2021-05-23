@@ -100,6 +100,7 @@ func rightMosueforimgFunc(x int, y int) (succ bool) {
 	robotgo.MouseToggle(`down`, `right`)
 	robotgo.Sleep(1)
 	robotgo.MouseToggle(`up`, `right`)
+	robotgo.Sleep(1)
 	succ = true
 	return
 }
