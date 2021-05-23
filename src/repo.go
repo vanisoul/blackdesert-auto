@@ -25,6 +25,7 @@ func checkCount(fmls []formula) (succ bool) {
 					if LoVsucc {
 						robotgo.KeyTap("esc")
 					} else {
+						robotgo.KeyTap("esc")
 						succ = false
 						return
 					}
