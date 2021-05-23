@@ -81,8 +81,10 @@ func taskLogin() {
 	leftMosueforimg("img/randomLogin.png")
 
 	chooseRole(infoConfig.Role)
-	robotgo.Sleep(30)
+	robotgo.Sleep(10)
 	robotgo.MoveMouse(0, 0)
+	robotgo.Sleep(20)
+
 }
 
 func taskFeatures() {
