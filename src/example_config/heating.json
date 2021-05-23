@@ -23,6 +23,86 @@
                 }
             ],
             "recycle" : ["img/IronFragments.png","img/IronBlock.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/CopperOre.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/CopperBlock.png","img/CopperFragments.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/ZincOre.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/ZinBlock.png","img/ZinFragments.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/ZinFragments.png",
+                    "LoV"  : 3000
+                },                
+                {
+                    "name" : "img/CopperFragments.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/brass.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/TinOre.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/TinBlock.png","img/TinFragments.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/CopperFragments.png",
+                    "LoV"  : 3000
+                },
+                {
+                    "name" : "img/TinFragments.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/bronze.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/VanadiumOre.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/VanadiumFragments.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/VanadiumFragments.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/VanadiumBlock.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/TitaniteOre.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/TitaniteFragments.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/TitaniteFragments.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/TitaniteBlock.png"]
         }
     ]
 }

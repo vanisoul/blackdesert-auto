@@ -1,0 +1,28 @@
+{
+    "status" : false,
+    "arms":["img/HeatingStone.png","img/ProcessedClothing.png"],
+    "pearlArms":["img/ProcessingSetGloves.png","img/ProcessingSetDress.png","img/ProcessingSetHeadwear.png","img/ProcessingSetShoes.png"],
+    "method":[
+        {
+            "formula" : [
+                {
+                    "name" : "img/IronFragments.png",
+                    "LoV"  : 3000
+                },
+                {
+                    "name" : "img/Coal.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/Steel.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "img/IronOre.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["img/IronFragments.png","img/IronBlock.png"]
+        }
+    ]
+}
