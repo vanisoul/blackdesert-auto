@@ -34,7 +34,9 @@ func runTask(typeStr string, method []method) {
 		return
 	}
 	tmpDrinkToWork := 0
-	for _, med := range method {
+	methodnumbers := generateRandomNumber(0, len(method), len(method))
+	for _, mednum := range methodnumbers {
+		med := method[mednum]
 		if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
 			checkMainScreen()
 			beerTask()
