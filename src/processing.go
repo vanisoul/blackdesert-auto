@@ -10,10 +10,17 @@ import (
 func processingTask(status bool, typeStr string, arms []string, pearlArms []string, method []method) {
 
 	if status {
-		suitUpArms(arms...)
-		checkMainScreen()
-		suitUpPearlArms(pearlArms...)
-		checkMainScreen()
+		infoConfig, err := LoadConfigInfo()
+		if err != nil {
+			log.Errorf("cannot load config:", err)
+			return
+		}
+		if infoConfig.ProcessingCutoverArm {
+			suitUpArms(arms...)
+			checkMainScreen()
+			suitUpPearlArms(pearlArms...)
+			checkMainScreen()
+		}
 		runTask(typeStr, method)
 	}
 }

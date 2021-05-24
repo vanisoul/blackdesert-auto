@@ -34,4 +34,5 @@ type ConfigInfo struct {
 	DrinkingOnTheWayToWork int      `mapstructure:"drinkingOnTheWayToWork"`
 	ProcessedTimeSec       int      `mapstructure:"processedTimeSec"`
 	ClearBag               []string `mapstructure:"clearBag"`
+	ProcessingCutoverArm   bool     `mapstructure:"processingCutoverArm"`
 }
