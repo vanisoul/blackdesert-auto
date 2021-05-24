@@ -23,11 +23,8 @@ func main() {
 	// 	return
 	// }
 	// runTask("Heating", heatingConfig.Method)
-	tt := generateRandomNumber(0, 5, 5)
-	fmt.Println(tt)
-	fmt.Println(len(tt))
 
-	for false {
+	for {
 		succ := checkMainScreen(false)
 		if succ {
 			taskFeatures()
