@@ -28,41 +28,47 @@ func main() {
 		if succ {
 			taskFeatures()
 		} else {
-			taskLogin()
-			searchRepo()
-			infoConfig, err := LoadConfigInfo()
-			if err != nil {
-				log.Errorf("cannot load config:", err)
-				return
+			loginsucc := taskLogin()
+			if loginsucc {
+				searchRepo()
+				infoConfig, err := LoadConfigInfo()
+				if err != nil {
+					log.Errorf("cannot load config:", err)
+					return
+				}
+				saveRepoAll(infoConfig.ClearBag...)
 			}
-			saveRepoAll(infoConfig.ClearBag...)
 		}
 	}
 }
 
-func taskLogin() {
+func taskLogin() (succ bool) {
 	// joindesktop()
 	closeblack()
 
 	infoConfig, err := LoadConfigInfo()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
+		succ = false
 		return
 	}
 	opensucc := openGameClient(infoConfig.GamePath)
 	if !opensucc {
 		log.Errorf("openGameClient")
+		succ = false
 		return
 	}
 	accConfig, err := LoadConfigAccount()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
+		succ = false
 		return
 	}
 
 	setaccpwsuu := setAccPW(accConfig.Account, accConfig.Password)
 	if !setaccpwsuu {
 		log.Errorf("setaccpw")
+		succ = false
 		return
 	}
 
@@ -79,6 +85,7 @@ func taskLogin() {
 	if gsscc {
 		leftMosue(gx, gy)
 	} else {
+		succ = false
 		return
 	}
 	leftMosueforimg("img/agree.png")
@@ -90,7 +97,8 @@ func taskLogin() {
 	robotgo.Sleep(10)
 	robotgo.MoveMouse(0, 0)
 	robotgo.Sleep(20)
-
+	succ = true
+	return
 }
 
 func taskFeatures() {
@@ -99,12 +107,12 @@ func taskFeatures() {
 	checkMainScreen()
 	// 加熱
 	heatingTask()
-	checkMainScreen()
+	// checkMainScreen()
 	//勞工恢復體力
-	beerTask()
-	checkMainScreen()
+	// beerTask()
+	// checkMainScreen()
 	// 砍材
-	chopWoodTask()
+	// chopWoodTask()
 	// checkMainScreen()
 	// 料理
 	// checkMainScreen()

@@ -89,6 +89,8 @@ func processPutAll(imgs ...string) {
 				takeArticleSum = takeArticleSum + 1
 			}
 			if takeArticleSum == len(imgs) {
+				log.Info("takeArticleSum :", takeArticleSum)
+				log.Info("len(imgs) :", len(imgs))
 				return
 			}
 		}
@@ -100,6 +102,7 @@ func processPutAll(imgs ...string) {
 
 func scrollProcessDown(fre int) {
 	_, x, y := whilescreen("img/ProcessingOK.png")
+	log.Infof("scrollProcessDown x:%d, y:%d", x, y)
 	robotgo.MoveMouse(x+41, y+103)
 	scrolldown(fre)
 }
