@@ -24,7 +24,7 @@ func main() {
 	// }
 	// runTask("Heating", heatingConfig.Method)
 	for {
-		succ := checkMainScreen()
+		succ := checkMainScreen(false)
 		if succ {
 			taskFeatures()
 		} else {
@@ -119,7 +119,7 @@ func taskFeatures() {
 	// 煉金
 }
 
-func checkMainScreen() (succ bool) {
+func checkMainScreen(gotomain ...bool) (succ bool) {
 	count := 3
 	for count > 0 {
 		robotgo.KeyTap("esc")
@@ -137,6 +137,9 @@ func checkMainScreen() (succ bool) {
 		count = count - 1
 	}
 	closeblack()
+	if gotomain[0] {
+		main()
+	}
 	return
 }
 
