@@ -28,14 +28,13 @@ func runTask(typeStr string, method []method) {
 	}
 	tmpDrinkToWork := 0
 	for _, med := range method {
+		if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
+			checkMainScreen()
+			beerTask()
+			tmpDrinkToWork = 0
+		}
 		succCount := checkCount(med.Formula)
 		if succCount {
-
-			if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
-				checkMainScreen()
-				beerTask()
-				tmpDrinkToWork = 0
-			}
 
 			searchRepo()
 			leftMosueforimg("img/ProcessingButton.png")
@@ -83,7 +82,7 @@ func processPutAll(imgs ...string) {
 	count := 3
 	for count > 0 {
 		for _, img := range imgs {
-			succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "Formula"), 3)
+			succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bag"), 6)
 			if succright {
 				robotgo.Sleep(1)
 				takeArticleSum = takeArticleSum + 1
