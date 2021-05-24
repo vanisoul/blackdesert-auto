@@ -82,7 +82,7 @@ func processPutAll(imgs ...string) {
 	count := 3
 	for count > 0 {
 		for _, img := range imgs {
-			succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bag"), 6)
+			succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "Formula"), 6)
 			if succright {
 				robotgo.Sleep(1)
 				takeArticleSum = takeArticleSum + 1
