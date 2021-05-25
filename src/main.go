@@ -24,6 +24,7 @@ func main() {
 	// }
 	// runTask("Heating", heatingConfig.Method)
 
+	leftMosue(0, 0)
 	for {
 		succ := checkMainScreen(false)
 		if succ {
