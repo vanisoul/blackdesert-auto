@@ -46,7 +46,7 @@ func main() {
 func taskLogin() (succ bool) {
 	// joindesktop()
 	closeblack()
-
+	robotgo.MoveMouse(0, 0)
 	infoConfig, err := LoadConfigInfo()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
@@ -95,9 +95,9 @@ func taskLogin() (succ bool) {
 	leftMosueforimg("img/randomLogin.png")
 
 	chooseRole(infoConfig.Role)
-	robotgo.Sleep(10)
+	robotgo.Sleep(3)
 	robotgo.MoveMouse(0, 0)
-	robotgo.Sleep(20)
+	robotgo.Sleep(27)
 	succ = true
 	return
 }
