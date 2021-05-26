@@ -30,16 +30,16 @@ func main() {
 		if succ {
 			taskFeatures()
 		} else {
-			loginsucc := taskLogin()
-			if loginsucc {
-				searchRepo()
-				infoConfig, err := LoadConfigInfo()
-				if err != nil {
-					log.Errorf("cannot load config:", err)
-					return
-				}
-				saveRepoAll(infoConfig.ClearBag...)
-			}
+			taskLogin()
+			// if loginsucc {
+			// 	searchRepo()
+			// 	infoConfig, err := LoadConfigInfo()
+			// 	if err != nil {
+			// 		log.Errorf("cannot load config:", err)
+			// 		return
+			// 	}
+			// 	saveRepoAll(infoConfig.ClearBag...)
+			// }
 		}
 	}
 }
@@ -119,6 +119,7 @@ func taskFeatures() {
 	// 料理
 	// checkMainScreen()
 	// 煉金
+	endStatus()
 }
 
 func checkMainScreen(gotomain ...bool) (succ bool) {

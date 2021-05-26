@@ -15,12 +15,15 @@ func processingTask(status bool, typeStr string, arms []string, pearlArms []stri
 			log.Errorf("cannot load config:", err)
 			return
 		}
-		if infoConfig.ProcessingCutoverArm {
+
+		if infoConfig.ProcessingCutoverArm && checkStatusArms(typeStr) {
 			suitUpArms(arms...)
 			checkMainScreen()
 			suitUpPearlArms(pearlArms...)
 			checkMainScreen()
 		}
+
+		setStatusArms(typeStr)
 		runTask(typeStr, method)
 	}
 }
@@ -34,8 +37,19 @@ func runTask(typeStr string, method []method) {
 		return
 	}
 	tmpDrinkToWork := 0
-	methodnumbers := generateRandomNumber(0, len(method), len(method))
+	succ, methodnumbers, skip := checkStatusMethodnumbersCount(typeStr, method)
+	if !succ {
+		log.Errorf("error checkStatusMethodnumbersCount", err)
+		return
+	}
+	tmpcount := 0
 	for _, mednum := range methodnumbers {
+		if tmpcount < skip {
+			tmpcount = tmpcount + 1
+			continue
+		}
+
+		setStatusMethod(typeStr, methodnumbers, tmpcount)
 		med := method[mednum]
 		if tmpDrinkToWork == infoConfig.DrinkingOnTheWayToWork {
 			checkMainScreen()
@@ -87,6 +101,7 @@ func runTask(typeStr string, method []method) {
 			saveRepoAll(med.Recycle...)
 			tmpDrinkToWork = tmpDrinkToWork + 1
 		}
+		tmpcount = tmpcount + 1
 	}
 }
 
