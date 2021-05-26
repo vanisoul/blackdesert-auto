@@ -54,10 +54,14 @@ func runTask(typeStr string, method []method) {
 				leftMosueforimgEasy(notStr)
 			}
 			for _, fml := range med.Formula {
-				processPutAll(fml.Name)
+				takeArticleSum := processPutAll(fml.Name)
+				if takeArticleSum == len(med.Formula) {
+					leftMosueforimg("img/ProcessingStart.png")
+				}
 			}
+
 			robotgo.Sleep(1)
-			leftMosueforimg("img/ProcessingStart.png")
+
 			proing := true
 
 			tmpTimeSec := 0
@@ -86,8 +90,8 @@ func runTask(typeStr string, method []method) {
 	}
 }
 
-func processPutAll(imgs ...string) {
-	takeArticleSum := 0
+func processPutAll(imgs ...string) (takeArticleSum int) {
+	takeArticleSum = 0
 	count := 3
 	for count > 0 {
 		for _, img := range imgs {
@@ -105,7 +109,7 @@ func processPutAll(imgs ...string) {
 		scrollProcessDown(8)
 		count = count - 1
 	}
-
+	return
 }
 
 func scrollProcessDown(fre int) {
