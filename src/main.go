@@ -98,7 +98,17 @@ func taskLogin() (succ bool) {
 	chooseRole(infoConfig.Role)
 	robotgo.Sleep(3)
 	robotgo.MoveMouse(0, 0)
-	robotgo.Sleep(27)
+	robotgo.Sleep(57)
+	count := 0
+	for count < 4 {
+		succCh := checkMainScreen(false)
+		if succCh {
+			succ = true
+			return
+		}
+		robotgo.Sleep(40)
+		count = count + 1
+	}
 	succ = true
 	return
 }
