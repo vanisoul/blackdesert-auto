@@ -115,8 +115,8 @@ func taskLogin() (succ bool) {
 
 func taskFeatures() {
 	//勞工恢復體力
-	beerTask()
-	checkMainScreen()
+	// beerTask()
+	// checkMainScreen()
 	// 加熱
 	heatingTask()
 	// checkMainScreen()

@@ -25,9 +25,9 @@ func processingTask(status bool, typeStr string, arms []string, pearlArms []stri
 			setLog("processingTask", "開始換珍珠裝備", strings.Join(pearlArms, ", "))
 			suitUpPearlArms(pearlArms...)
 			checkMainScreen()
+			setStatusArms(typeStr)
 		}
 
-		setStatusArms(typeStr)
 		runTask(typeStr, method)
 	}
 }
