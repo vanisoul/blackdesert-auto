@@ -56,9 +56,11 @@ func searchRepo() {
 	robotgo.KeyTap("r")
 	succCheckRepo, repox, repoy := whilescreen("img/bank.png", 2)
 	if succCheckRepo {
+		setLog("searchRepo", "原地尋找到倉庫", "")
 		leftMosue(repox, repoy)
 	} else {
 		checkMainScreen()
+		setLog("searchRepo", "需要回家再走過去", "")
 		// TODO : 先回家 在走到NPC 比較不會有誤差
 		// goToHome()
 		key := strings.Split(infoConfig.SearchNPC, "+")[1]
@@ -76,14 +78,17 @@ func searchRepo() {
 			robotgo.KeyTap("control")
 			robotgo.Sleep(1)
 			robotgo.KeyTap("r")
-			leftMosueforimg("img/bank.png")
+			leftBanksucc := leftMosueforimg("img/bank.png")
+			if leftBanksucc {
+				setLog("searchRepo", "成功開啟倉庫", "")
+			}
 		}
 	}
 }
 
 func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 	oksucc, _, _ := whilescreen("img/bank_ok.png")
-
+	succ = false
 	if oksucc {
 		count := 3
 		for count > 0 {
@@ -94,6 +99,7 @@ func takeRepoOne(quantity int, imgs ...string) (succ bool) {
 				takeCount(quantity)
 				leftMosueforimg("img/bagToBankEnter.png")
 				robotgo.Sleep(1)
+				succ = true
 				return
 			}
 			scrollBankDown(8)
@@ -153,7 +159,8 @@ func saveRepoAll(imgs ...string) {
 	}
 }
 
-func saveRepoOne(imgs ...string) {
+func saveRepoOne(imgs ...string) (succ bool) {
+	succ = false
 	oksucc, _, _ := whilescreen("img/bank_ok.png")
 	if oksucc {
 		count := 3
@@ -164,12 +171,14 @@ func saveRepoOne(imgs ...string) {
 				leftMosueforimg("img/bag_max.png")
 				leftMosueforimg("img/bagToBankEnter.png")
 				robotgo.Sleep(1)
+				succ = true
 				return
 			}
 			scrollBagDown(8)
 			count = count - 1
 		}
 	}
+	return
 }
 
 func takeCount(quantity int) {

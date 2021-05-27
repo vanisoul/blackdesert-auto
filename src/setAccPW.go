@@ -3,6 +3,7 @@ package main
 import "github.com/go-vgo/robotgo"
 
 func setAccPW(acc string, pw string) (succ bool) {
+	setLog("setAccPW", "輸入帳號密碼", "")
 	ctrlA := func() {
 		robotgo.KeyTap("a", "control")
 	}

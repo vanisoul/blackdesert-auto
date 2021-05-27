@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
@@ -46,6 +47,7 @@ func main() {
 
 func taskLogin() (succ bool) {
 	// joindesktop()
+	setLog("taskLogin", "執行登入", "")
 	closeblack()
 	robotgo.MoveMouse(0, 0)
 	infoConfig, err := LoadConfigInfo()
@@ -101,6 +103,7 @@ func taskLogin() (succ bool) {
 	robotgo.Sleep(57)
 	count := 0
 	for count < 4 {
+		setLog("LoginTask", "等待登入成功畫面", strconv.Itoa(count))
 		succCh := checkMainScreen(false)
 		if succCh {
 			succ = true
@@ -134,6 +137,7 @@ func taskFeatures() {
 
 func checkMainScreen(gotomain ...bool) (succ bool) {
 	count := 3
+	setLog("checkMainScreen", "進行畫面檢查", "")
 	for count > 0 {
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
@@ -151,12 +155,14 @@ func checkMainScreen(gotomain ...bool) (succ bool) {
 	}
 	closeblack()
 	if len(gotomain) == 0 {
+		setLog("checkMainScreen", "檢查錯誤關閉並重啟遊戲", "")
 		main()
 	}
 	return
 }
 
 func chooseRole(role int) {
+	setLog("chooseRole", "選擇角色", strconv.Itoa(role))
 	rolesucc, x, y := whilescreen("img/role.png")
 	if rolesucc {
 		y = y - 865
@@ -167,6 +173,7 @@ func chooseRole(role int) {
 }
 
 func setSafe(safepwd string) {
+	setLog("setSafe", "輸入安全密碼", "")
 	for _, pwd := range safepwd {
 		robotgo.Sleep(2)
 		img := fmt.Sprintf("img/%s.png", string(pwd))
@@ -177,6 +184,7 @@ func setSafe(safepwd string) {
 }
 
 func startGame() {
+	setLog("startGame", "從客戶端開啟遊戲", "")
 	succstart, x, y := whilescreen("img/clientStart.png")
 	if succstart {
 		leftMosue(x, y)
@@ -189,6 +197,7 @@ func startGame() {
 }
 
 func selectGraphics(grap int) {
+	setLog("selectGraphics", "選擇顯示卡", strconv.Itoa(grap))
 	succsel, x, y := whilescreenMany(100, "img/selectGraphics.png", "img/selectGraphics2.png")
 	if succsel {
 		leftMosue(x, y+(40*grap))

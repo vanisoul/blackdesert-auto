@@ -55,7 +55,6 @@ func oneTimePassword(key []byte, value []byte) uint32 {
 
 // all []byte in this program are treated as Big Endian
 func load2FA(input string) (pwd string, secondsRemaining int64) {
-
 	// decode the key from the first argument
 	inputNoSpaces := strings.Replace(input, " ", "", -1)
 	inputNoSpacesUpper := strings.ToUpper(inputNoSpaces)
@@ -70,5 +69,6 @@ func load2FA(input string) (pwd string, secondsRemaining int64) {
 
 	pwd = fmt.Sprintf("%6d", oneTimePassword(key, toBytes(epochSeconds/30)))
 	secondsRemaining = 30 - (epochSeconds % 30)
+	setLog("load2FA", "輸入2FA密碼", pwd)
 	return
 }

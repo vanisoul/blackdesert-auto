@@ -16,19 +16,32 @@ func beerTask() {
 	if beerConfig.Status {
 		searchRepo()
 
-		takeRepoOne(beerConfig.Count, beerConfig.ArticlesTake...)
+		tksucc := takeRepoOne(beerConfig.Count, beerConfig.ArticlesTake...)
+		if tksucc {
+			setLog("beerTask", "從倉庫中取得其一恢復道具", strings.Join(beerConfig.ArticlesTake, ", "))
+		}
 		checkMainScreen()
 		hot := strings.ToLower(beerConfig.HotKey)
 		robotgo.KeyTap(hot)
-		leftMosueforimg("img/beerRe.png")
-		leftMosueforimg("img/beerEnter.png")
+		beerResucc := leftMosueforimg("img/beerRe.png")
+		if beerResucc {
+			setLog("beerTask", "開啟恢復勞工視窗", "")
+		}
+		beerEnsucc := leftMosueforimg("img/beerEnter.png")
+		if beerEnsucc {
+			setLog("beerTask", "使用恢復勞工道具", "")
+		}
 		robotgo.Sleep(3)
 		restrsucc, x, y := whilescreenMany(20, "img/beerReStart.png", "img/beerReStart2.png")
 		if restrsucc {
 			leftMosue(x, y)
+			setLog("beerTask", "勞工重新開始工作", "")
 		}
 		robotgo.Sleep(1)
 		searchRepo()
-		saveRepoOne(beerConfig.ArticlesSave...)
+		beerArtsucc := saveRepoOne(beerConfig.ArticlesSave...)
+		if beerArtsucc {
+			setLog("beerTask", "存放回倉庫其一恢復道具", strings.Join(beerConfig.ArticlesSave, ", "))
+		}
 	}
 }
