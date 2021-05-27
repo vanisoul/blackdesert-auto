@@ -23,8 +23,10 @@ func checkCount(fmls []formula) (succ bool) {
 					LoVStr := fmt.Sprintf("img/%d_VoL.png", fml.Lov)
 					LoVsucc, _, _ := whilescreenEasy(LoVStr, 3)
 					if LoVsucc {
+						setLog("checkCount", "加工材料數量合格", fml.Name)
 						robotgo.KeyTap("esc")
 					} else {
+						setLog("checkCount", "加工材料數量不合格 離開此配方加工", fml.Name)
 						robotgo.KeyTap("esc")
 						robotgo.Sleep(1)
 						succ = false
@@ -145,7 +147,10 @@ func saveRepoAll(imgs ...string) {
 				succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bag"), 3)
 				if succright {
 					leftMosueforimg("img/bag_max.png")
-					leftMosueforimg("img/bagToBankEnter.png")
+					saveSucc := leftMosueforimg("img/bagToBankEnter.png")
+					if saveSucc {
+						setLog("saveRepoAll", "成功存放物品", img)
+					}
 					robotgo.Sleep(1)
 					takeArticleSum = takeArticleSum + 1
 				}

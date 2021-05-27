@@ -72,6 +72,7 @@ func rightMosueforimgEasyAll(imgs []string, count int) (succ bool, succfre int) 
 		succscr, x, y := whilescreenEasy(img, count)
 		if succscr {
 			rightMosueforimgFunc(x, y)
+			setLog("rightMosueforimgEasyAll", "成功點擊右鍵", img)
 			tmpsucc = tmpsucc + 1
 		} else {
 			succ = false

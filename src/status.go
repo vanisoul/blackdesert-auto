@@ -1,6 +1,8 @@
 package main
 
 import (
+	"strconv"
+
 	"github.com/labstack/gommon/log"
 	"github.com/spf13/viper"
 )
@@ -95,6 +97,7 @@ func setStatusArms(typeName string) {
 }
 
 func setStatusMethod(typeName string, methodnumbers []int, count int) {
+	setLog("setStatusMethod", "儲存執行位置", strconv.Itoa(count))
 	vipStatusMethod := viper.New()
 	vipStatusMethod.AddConfigPath("./status/")
 	vipStatusMethod.SetConfigName("status")

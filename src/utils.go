@@ -118,3 +118,11 @@ func copyFileContents(src, dst string) (err error) {
 	err = out.Sync()
 	return
 }
+
+func arrayToString(a []int, delim string) string {
+	return strings.Trim(strings.Replace(fmt.Sprint(a), " ", delim, -1), "[]")
+}
+
+func FormulaNameArrayToString(fml []formula, delim string) string {
+	return strings.Trim(strings.Replace(fmt.Sprint(fml), " ", delim, -1), "[]")
+}

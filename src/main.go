@@ -24,23 +24,20 @@ func main() {
 	// 	return
 	// }
 	// runTask("Heating", heatingConfig.Method)
+	// heatingConfig, err := LoadConfigheating()
+	// if err != nil {
+	// 	log.Errorf("cannot load config:", err)
+	// 	return
+	// }
+	// println(FormulaNameArrayToString(heatingConfig.Method[0].Formula, " + "))
 
-	leftMosue(0, 0)
 	for {
+		leftMosue(0, 0)
 		succ := checkMainScreen(false)
 		if succ {
 			taskFeatures()
 		} else {
 			taskLogin()
-			// if loginsucc {
-			// 	searchRepo()
-			// 	infoConfig, err := LoadConfigInfo()
-			// 	if err != nil {
-			// 		log.Errorf("cannot load config:", err)
-			// 		return
-			// 	}
-			// 	saveRepoAll(infoConfig.ClearBag...)
-			// }
 		}
 	}
 }
@@ -137,8 +134,8 @@ func taskFeatures() {
 
 func checkMainScreen(gotomain ...bool) (succ bool) {
 	count := 3
-	setLog("checkMainScreen", "進行畫面檢查", "")
 	for count > 0 {
+		setLog("checkMainScreen", "進行畫面檢查", strconv.Itoa(count))
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
 		robotgo.KeyTap("esc")
