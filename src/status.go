@@ -80,41 +80,44 @@ func checkStatusMethodnumbersCount(typeStr string, method []method) (succ bool, 
   "now":4
 */
 func setStatusArms(typeName string) {
-	viper.AddConfigPath("./status/")
-	viper.SetConfigName("status")
-	viper.SetConfigType("json")
+	vipStatusArms := viper.New()
+	vipStatusArms.AddConfigPath("./status/")
+	vipStatusArms.SetConfigName("status")
+	vipStatusArms.SetConfigType("json")
 
 	schedule := []int{}
-	viper.AutomaticEnv()
-	viper.Set("status", true)
-	viper.Set("type", typeName)
-	viper.Set("schedule", schedule)
-	viper.Set("now", 0)
-	viper.WriteConfig()
+	vipStatusArms.AutomaticEnv()
+	vipStatusArms.Set("status", true)
+	vipStatusArms.Set("type", typeName)
+	vipStatusArms.Set("schedule", schedule)
+	vipStatusArms.Set("now", 0)
+	vipStatusArms.WriteConfig()
 }
 
 func setStatusMethod(typeName string, methodnumbers []int, count int) {
-	viper.AddConfigPath("./status/")
-	viper.SetConfigName("status")
-	viper.SetConfigType("json")
+	vipStatusMethod := viper.New()
+	vipStatusMethod.AddConfigPath("./status/")
+	vipStatusMethod.SetConfigName("status")
+	vipStatusMethod.SetConfigType("json")
 
-	viper.AutomaticEnv()
-	viper.Set("status", true)
-	viper.Set("type", typeName)
-	viper.Set("schedule", methodnumbers)
-	viper.Set("now", count)
-	viper.WriteConfig()
+	vipStatusMethod.AutomaticEnv()
+	vipStatusMethod.Set("status", true)
+	vipStatusMethod.Set("type", typeName)
+	vipStatusMethod.Set("schedule", methodnumbers)
+	vipStatusMethod.Set("now", count)
+	vipStatusMethod.WriteConfig()
 }
 
 func endStatus() {
-	viper.AddConfigPath("./status/")
-	viper.SetConfigName("status")
-	viper.SetConfigType("json")
+	vipStatusEnd := viper.New()
+	vipStatusEnd.AddConfigPath("./status/")
+	vipStatusEnd.SetConfigName("status")
+	vipStatusEnd.SetConfigType("json")
 
-	viper.AutomaticEnv()
-	viper.Set("status", false)
-	viper.Set("type", "")
-	viper.Set("schedule", []int{})
-	viper.Set("now", -1)
-	viper.WriteConfig()
+	vipStatusEnd.AutomaticEnv()
+	vipStatusEnd.Set("status", false)
+	vipStatusEnd.Set("type", "")
+	vipStatusEnd.Set("schedule", []int{})
+	vipStatusEnd.Set("now", -1)
+	vipStatusEnd.WriteConfig()
 }

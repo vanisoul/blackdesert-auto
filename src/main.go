@@ -150,7 +150,7 @@ func checkMainScreen(gotomain ...bool) (succ bool) {
 		count = count - 1
 	}
 	closeblack()
-	if len(gotomain) > 0 && gotomain[0] {
+	if len(gotomain) == 0 {
 		main()
 	}
 	return
