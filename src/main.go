@@ -30,7 +30,13 @@ func main() {
 	// 	return
 	// }
 	// println(FormulaNameArrayToString(heatingConfig.Method[0].Formula, " + "))
-
+	// infoConfig, err := LoadConfigInfo()
+	// if err != nil {
+	// 	log.Errorf("cannot load config:", err)
+	// }
+	// bitmap := robotgo.CaptureScreen(infoConfig.GameScreenX, infoConfig.GameScreenY, infoConfig.GameScreenW, infoConfig.GameScreenH)
+	// errorPngName := fmt.Sprintf("log/AAA.png")
+	// robotgo.SaveBitmap(bitmap, errorPngName)
 	for {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)
@@ -45,6 +51,9 @@ func main() {
 func taskLogin() (succ bool) {
 	// joindesktop()
 	setLog("taskLogin", "執行登入", "")
+
+	errorScreen("img/winError.png")
+
 	closeblack()
 	robotgo.MoveMouse(0, 0)
 	infoConfig, err := LoadConfigInfo()
