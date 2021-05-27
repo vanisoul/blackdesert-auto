@@ -37,7 +37,7 @@ func setLog(typeStr string, msg string, item string) {
 func LoadConfiglog() (config ConfigLog, err error) {
 	exis := FileExist("log/log.json")
 	if !exis {
-		err := CopyFile("log/log-defult.json", "log/log.json")
+		err := copyFileContents("log/log-defult.json", "log/log.json")
 		if err != nil {
 			fmt.Printf("CopyFile failed %q\n", err)
 		} else {

@@ -9,34 +9,7 @@ import (
 )
 
 func main() {
-	// robotgo.DragMouse()
 
-	// fxx, fyy := robotgo.GetMousePos()
-	// fmt.Println("FindBitmap------", fxx, fyy)
-	// _, fx, fy := whilescreen("img/ProcessingOK.png")
-	// fmt.Println("FindBitmap------", fx, fy)
-	// proing, _, _ := whilescreenEasy("img/Processeding_1.png")
-	// fmt.Println(proing)
-
-	// heatingConfig, err := LoadConfigheating()
-	// if err != nil {
-	// 	log.Errorf("cannot load config:", err)
-	// 	return
-	// }
-	// runTask("Heating", heatingConfig.Method)
-	// heatingConfig, err := LoadConfigheating()
-	// if err != nil {
-	// 	log.Errorf("cannot load config:", err)
-	// 	return
-	// }
-	// println(FormulaNameArrayToString(heatingConfig.Method[0].Formula, " + "))
-	// infoConfig, err := LoadConfigInfo()
-	// if err != nil {
-	// 	log.Errorf("cannot load config:", err)
-	// }
-	// bitmap := robotgo.CaptureScreen(infoConfig.GameScreenX, infoConfig.GameScreenY, infoConfig.GameScreenW, infoConfig.GameScreenH)
-	// errorPngName := fmt.Sprintf("log/AAA.png")
-	// robotgo.SaveBitmap(bitmap, errorPngName)
 	for {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)

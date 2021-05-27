@@ -9,7 +9,7 @@ import (
 func LoadConfigstatus() (config ConfigStatus, err error) {
 	exis := FileExist("status/status.json")
 	if !exis {
-		err := CopyFile("status/status-defult.json", "status/status.json")
+		err := copyFileContents("status/status-defult.json", "status/status.json")
 		if err != nil {
 			fmt.Printf("CopyFile failed %q\n", err)
 		} else {
