@@ -4,17 +4,40 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/labstack/gommon/log"
 	"github.com/spf13/viper"
 )
 
 func setLog(typeStr string, msg string, item string) {
-	currentTime := time.Now()
+	CurrentTime := time.Now().Format("2006-01-01 12:30:30")
+	vipStatusLog := viper.New()
+	vipStatusLog.AddConfigPath("./log/")
+	vipStatusLog.SetConfigName("log")
+	vipStatusLog.SetConfigType("json")
+
+	originData, err := LoadConfiglog()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+		return
+	}
+	newDatas := originData.Log
+
+	var data Log
+	data.CurrentTime = CurrentTime
+	data.Item = item
+	data.Msg = msg
+	data.TypeStr = typeStr
+	newDatas = append(newDatas, data)
+	vipStatusLog.AutomaticEnv()
+	vipStatusLog.Set("log", newDatas)
+
+	vipStatusLog.WriteConfig()
 }
 
-func LoadConfiglog() (config ConfigStatus, err error) {
+func LoadConfiglog() (config ConfigLog, err error) {
 	exis := FileExist("log/log.json")
 	if !exis {
-		err := CopyFile("status/status-defult.json", "status/status.json")
+		err := CopyFile("log/log-defult.json", "log/log.json")
 		if err != nil {
 			fmt.Printf("CopyFile failed %q\n", err)
 		} else {
@@ -22,8 +45,8 @@ func LoadConfiglog() (config ConfigStatus, err error) {
 		}
 	}
 
-	viper.AddConfigPath("./status/")
-	viper.SetConfigName("status")
+	viper.AddConfigPath("./log/")
+	viper.SetConfigName("log")
 	viper.SetConfigType("json")
 
 	viper.AutomaticEnv()
@@ -35,4 +58,15 @@ func LoadConfiglog() (config ConfigStatus, err error) {
 
 	err = viper.Unmarshal(&config)
 	return
+}
+
+type ConfigLog struct {
+	Log []Log `mapstructure:"log"`
+}
+
+type Log struct {
+	CurrentTime string `mapstructure:"currentTime"`
+	TypeStr     string `mapstructure:"typeStr"`
+	Msg         string `mapstructure:"msg"`
+	Item        string `mapstructure:"item"`
 }
