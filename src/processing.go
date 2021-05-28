@@ -83,7 +83,10 @@ func runTask(typeStr string, method []method) {
 				takeArticleSum := processPutAll(fml.Name)
 				if takeArticleSum == len(med.Formula) {
 					setLog("runTask", "開始加工", strings.Join(med.Recycle, " ,"))
-					leftMosueforimg("img/ProcessingStart.png")
+					stSucc, stx, sty := whilescreenMany(20, "img/ProcessingStart.png", "img/ProcessingStartOne.png")
+					if stSucc {
+						leftMosue(stx, sty)
+					}
 				}
 			}
 
