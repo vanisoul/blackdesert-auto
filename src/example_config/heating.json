@@ -1,7 +1,7 @@
 {
     "status" : true,
     "arms":["加熱加工石.png","加工服.png"],
-    "pearlArms":["img/ProcessingSetGloves.png","img/ProcessingSetDress.png","img/ProcessingSetHeadwear.png","img/ProcessingSetShoes.png"],
+    "pearlArms":["加工套手套.png","加工套耳飾.png","加工套衣服.png","加工套鞋.png"],
     "method":[
         {
             "formula" : [
