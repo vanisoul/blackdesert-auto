@@ -1,4 +1,4 @@
-# 物品分為三種類
+# 物品分為三種類(img/items)
 insertStrToFilenameTailArr(imgs, "type")
 insertStrToFilenameTail(img, "type")
 type :
@@ -21,3 +21,9 @@ robotgo.TypeStr("aaaaaa", 0.1)
 
 # leftMosue
 leftMosue(x y)
+
+# 新增加工流程
+增加 種類.go
+呼叫processingTask(.Status, "種類", .Arms, .PearlArms, .Method)
+img/is種類.png
+img/not種類.png

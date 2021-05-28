@@ -77,6 +77,8 @@ func searchRepo() {
 			robotgo.Sleep(60)
 			robotgo.KeyTap("t")
 			robotgo.Sleep(1)
+			robotgo.KeyTap("t")
+			robotgo.Sleep(1)
 			robotgo.KeyTap("control")
 			robotgo.Sleep(1)
 			robotgo.KeyTap("r")

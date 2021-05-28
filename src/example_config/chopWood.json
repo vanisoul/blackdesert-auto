@@ -1,28 +1,30 @@
 {
-    "status" : false,
-    "arms":["img/HeatingStone.png","img/ProcessedClothing.png"],
-    "pearlArms":["img/ProcessingSetGloves.png","img/ProcessingSetDress.png","img/ProcessingSetHeadwear.png","img/ProcessingSetShoes.png"],
+    "status" : true,
+    "arms":["砍柴加工石.png","加工服.png"],
+    "pearlArms":["加工套手套.png","加工套耳飾.png","加工套衣服.png","加工套鞋.png"],
     "method":[
         {
             "formula" : [
                 {
-                    "name" : "img/IronFragments.png",
+                    "name" : "鐵碎片.png",
                     "LoV"  : 3000
                 },
                 {
-                    "name" : "img/Coal.png",
+                    "name" : "煤炭.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/Steel.png"]
-        },{
+            "recycle" : ["鋼鐵.png"]
+        }
+        ,
+        {
             "formula" : [
                 {
-                    "name" : "img/IronOre.png",
+                    "name" : "鐵礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/IronFragments.png","img/IronBlock.png"]
+            "recycle" : ["鐵碎片.png","鐵鑄塊.png"]
         }
     ]
 }
