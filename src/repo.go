@@ -149,10 +149,9 @@ func saveRepoAll(imgs ...string) {
 				succright := rightMosueforimgEasy(insertStrToFilenameTail(img, "bag"), 3)
 				if succright {
 					leftMosueforimg("img/bag_max.png")
-					saveSucc := leftMosueforimg("img/bagToBankEnter.png")
-					if saveSucc {
-						setLog("saveRepoAll", "成功存放物品", img)
-					}
+					leftMosueforimg("img/bagToBankEnter.png")
+					setLog("saveRepoAll", "成功存放物品", img)
+
 					robotgo.Sleep(1)
 					takeArticleSum = takeArticleSum + 1
 				}
@@ -177,6 +176,8 @@ func saveRepoOne(imgs ...string) (succ bool) {
 				rightMosue(articlex, articley)
 				leftMosueforimg("img/bag_max.png")
 				leftMosueforimg("img/bagToBankEnter.png")
+				setLog("saveRepoOne", "成功存放其一物品", strings.Join(imgs, ", "))
+
 				robotgo.Sleep(1)
 				succ = true
 				return
