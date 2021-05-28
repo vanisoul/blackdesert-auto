@@ -2,3 +2,4 @@ config
 __debug_bin
 status.json
 log.json
+**/log/*.png

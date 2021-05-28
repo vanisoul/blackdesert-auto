@@ -28,8 +28,8 @@ func insertStrToFilenameTail(str string, taillStr string) (res string) {
 
 	ext := path.Ext(str)
 	name := strings.ReplaceAll(str, ext, "")
-	res = fmt.Sprintf("%s_%s%s", name, taillStr, ext)
-
+	fullName := path.Join("img", "items", name)
+	res = fmt.Sprintf("%s_%s%s", fullName, taillStr, ext)
 	return
 }
 
