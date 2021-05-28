@@ -10,5 +10,6 @@ func chopWoodTask() {
 		log.Errorf("cannot load config:", err)
 		return
 	}
-	processingTask(heatingConfig.Status, "chopWood", heatingConfig.Arms, heatingConfig.PearlArms, heatingConfig.Method)
+	setLog("chopWoodTask", "開始砍柴", "ChopWood")
+	processingTask(heatingConfig.Status, "ChopWood", heatingConfig.Arms, heatingConfig.PearlArms, heatingConfig.Method)
 }

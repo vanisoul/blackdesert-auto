@@ -11,6 +11,6 @@
     "repo" : "阿梅里葛",
     "drinkingOnTheWayToWork" : 1,
     "processedTimeSec" : 3600,
-    "processingCutoverArm" : false,
+    "processingCutoverArm" : true,
     "clearBag":[]
 }

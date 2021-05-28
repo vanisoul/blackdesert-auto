@@ -96,18 +96,27 @@ func taskLogin() (succ bool) {
 }
 
 func taskFeatures() {
+	statusConfig, err := LoadConfigstatus()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+		return
+	}
 	//勞工恢復體力
 	beerTask()
 	checkMainScreen()
-	// 加熱
-	heatingTask()
-	// checkMainScreen()
-	//勞工恢復體力
-	// beerTask()
-	// checkMainScreen()
-	// 砍材
-	// chopWoodTask()
-	// checkMainScreen()
+
+	if !(statusConfig.Status && (statusConfig.Type == "ChopWood" || statusConfig.Type == "RoyalCuisinePacking")) {
+		// 加熱
+		heatingTask()
+		checkMainScreen()
+	}
+
+	if !(statusConfig.Status && (statusConfig.Type == "RoyalCuisinePacking")) {
+		// 砍材
+		chopWoodTask()
+		// checkMainScreen()
+	}
+
 	// 料理
 	// checkMainScreen()
 	// 煉金
