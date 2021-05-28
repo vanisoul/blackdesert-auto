@@ -1,108 +1,108 @@
 {
     "status" : true,
-    "arms":["img/HeatingStone.png","img/ProcessedClothing.png"],
+    "arms":["加熱加工石.png","加工服.png"],
     "pearlArms":["img/ProcessingSetGloves.png","img/ProcessingSetDress.png","img/ProcessingSetHeadwear.png","img/ProcessingSetShoes.png"],
     "method":[
         {
             "formula" : [
                 {
-                    "name" : "img/IronFragments.png",
+                    "name" : "鐵碎片.png",
                     "LoV"  : 3000
                 },
                 {
-                    "name" : "img/Coal.png",
+                    "name" : "煤炭.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/Steel.png"]
+            "recycle" : ["鋼鐵.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/IronOre.png",
+                    "name" : "鐵礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/IronFragments.png","img/IronBlock.png"]
+            "recycle" : ["鐵碎片.png","鐵鑄塊.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/CopperOre.png",
+                    "name" : "銅礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/CopperBlock.png","img/CopperFragments.png"]
+            "recycle" : ["銅鑄塊.png","銅碎片.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/ZincOre.png",
+                    "name" : "鋅礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/ZinBlock.png","img/ZinFragments.png"]
+            "recycle" : ["鋅鑄塊.png","鋅碎片.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/ZinFragments.png",
+                    "name" : "鋅碎片.png",
                     "LoV"  : 3000
                 },                
                 {
-                    "name" : "img/CopperFragments.png",
+                    "name" : "銅碎片.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/brass.png"]
+            "recycle" : ["黃銅塊.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/TinOre.png",
+                    "name" : "錫礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/TinBlock.png","img/TinFragments.png"]
+            "recycle" : ["錫鑄塊.png","錫碎片.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/CopperFragments.png",
+                    "name" : "銅碎片.png",
                     "LoV"  : 3000
                 },
                 {
-                    "name" : "img/TinFragments.png",
+                    "name" : "錫碎片.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/bronze.png"]
+            "recycle" : ["青銅塊.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/VanadiumOre.png",
+                    "name" : "釩礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/VanadiumFragments.png"]
+            "recycle" : ["釩碎片.png","釩鑄塊.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/VanadiumFragments.png",
+                    "name" : "釩碎片.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/VanadiumBlock.png"]
+            "recycle" : ["釩鑄塊.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/TitaniteOre.png",
+                    "name" : "鈦礦石.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/TitaniteFragments.png"]
+            "recycle" : ["鈦碎片.png","鈦鑄塊.png"]
         },{
             "formula" : [
                 {
-                    "name" : "img/TitaniteFragments.png",
+                    "name" : "鈦碎片.png",
                     "LoV"  : 3000
                 }
             ],
-            "recycle" : ["img/TitaniteBlock.png"]
+            "recycle" : ["鈦鑄塊.png"]
         }
     ]
 }
