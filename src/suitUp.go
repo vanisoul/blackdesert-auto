@@ -17,7 +17,7 @@ func suitUpArms(arms ...string) {
 	count := 3
 	tmpfre := 0
 	for count > 0 {
-		_, fre := rightMosueforimgEasyAll(arms, 10)
+		_, fre := rightMosueforimgEasyAll(setArmsPathArr(arms), 10)
 		tmpfre = tmpfre + fre
 		if tmpfre == len(arms) {
 			return
@@ -41,7 +41,7 @@ func suitUpPearlArms(pearlArms ...string) {
 	count := 3
 	tmpfre := 0
 	for count > 0 {
-		_, fre := rightMosueforimgEasyAll(pearlArms, 3)
+		_, fre := rightMosueforimgEasyAll(setPearlArmsPathArr(pearlArms), 3)
 		tmpfre = tmpfre + fre
 		if tmpfre == len(pearlArms) {
 			return

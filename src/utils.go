@@ -16,8 +16,31 @@ func insertStrToFilenameTailArr(strs []string, taillStr string) (res []string) {
 
 		ext := path.Ext(str)
 		name := strings.ReplaceAll(str, ext, "")
-		strAnswer := fmt.Sprintf("%s_%s%s", name, taillStr, ext)
+		fullName := path.Join("img", "items", name)
+		strAnswer := fmt.Sprintf("%s_%s%s", fullName, taillStr, ext)
 		newstrs = append(newstrs, strAnswer)
+	}
+	res = newstrs
+	return
+}
+
+func setArmsPathArr(strs []string) (res []string) {
+	newstrs := []string{}
+	for _, str := range strs {
+
+		fullName := path.Join("img", "arms", str)
+		newstrs = append(newstrs, fullName)
+	}
+	res = newstrs
+	return
+}
+
+func setPearlArmsPathArr(strs []string) (res []string) {
+	newstrs := []string{}
+	for _, str := range strs {
+
+		fullName := path.Join("img", "pearlArms", str)
+		newstrs = append(newstrs, fullName)
 	}
 	res = newstrs
 	return
