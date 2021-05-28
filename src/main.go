@@ -132,9 +132,10 @@ func checkMainScreen(gotomain ...bool) (succ bool) {
 		}
 		count = count - 1
 	}
+	setLog("checkMainScreen", "檢查錯誤關閉並重啟遊戲", "")
+	saveIMG()
 	closeblack()
 	if len(gotomain) == 0 {
-		setLog("checkMainScreen", "檢查錯誤關閉並重啟遊戲", "")
 		main()
 	}
 	return

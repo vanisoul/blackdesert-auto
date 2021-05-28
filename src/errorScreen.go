@@ -27,3 +27,17 @@ func errorScreen(file string) {
 		leftMosue(errx, erry)
 	}
 }
+
+func saveIMG() {
+	infoConfig, err := LoadConfigInfo()
+	if err != nil {
+		log.Errorf("cannot load config:", err)
+	}
+
+	r := rand.New(rand.NewSource(time.Now().UnixNano())).Int()
+	bitmap := robotgo.CaptureScreen(infoConfig.GameScreenX, infoConfig.GameScreenY, infoConfig.GameScreenW, infoConfig.GameScreenH)
+	errorPngName := fmt.Sprintf("log/%d.png", r)
+	robotgo.SaveBitmap(bitmap, errorPngName)
+	setLog("taskLogin", "被迫關閉遊戲", strconv.Itoa(r))
+
+}
