@@ -132,7 +132,7 @@ func checkMainScreen(gotomain ...bool) (succ bool) {
 		robotgo.KeyTap("esc")
 		robotgo.Sleep(1)
 		robotgo.KeyTap("esc")
-		succ, _, _ = whilescreen("img/esc.png", 2)
+		succ, _, _ = whilescreenEasy("img/esc.png", 5)
 		if succ {
 			robotgo.MoveMouse(0, 0)
 			robotgo.KeyTap("esc")

@@ -88,7 +88,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 	imgh := c.Height
 	imgw := c.Width
-	CopyFile(pngName, "tmp.png")
+	copyFileContents(pngName, "tmp.png")
 	bit_map := robotgo.OpenBitmap("tmp.png")
 
 	defer robotgo.FreeBitmap(bit_map)
@@ -123,7 +123,7 @@ func whilescreen(pngName string, jcount ...int) (succ bool, x int, y int) {
 }
 
 func screenYesOrNoEasy(pngName string, jcount ...int) (succ bool) {
-	CopyFile(pngName, "tmp.png")
+	copyFileContents(pngName, "tmp.png")
 	bit_map := robotgo.OpenBitmap("tmp.png")
 	defer robotgo.FreeBitmap(bit_map)
 	count := 20
@@ -163,7 +163,7 @@ func whilescreenEasy(pngName string, jcount ...int) (succ bool, x int, y int) {
 
 	imgh := c.Height
 	imgw := c.Width
-	CopyFile(pngName, "tmp.png")
+	copyFileContents(pngName, "tmp.png")
 	bit_map := robotgo.OpenBitmap("tmp.png")
 
 	defer robotgo.FreeBitmap(bit_map)
