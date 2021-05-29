@@ -3,7 +3,7 @@ package main
 import "github.com/go-vgo/robotgo"
 
 func additionalMatters() {
-
+	setLog("additionalMatters", "", "")
 	//精靈骰子
 	elfDice()
 
@@ -12,10 +12,12 @@ func additionalMatters() {
 }
 
 func elfDice() {
+	setLog("additionalMatters", "elfDice", "")
 	checkMainScreen()
 	robotgo.KeyTap("esc")
-	eSucc, ex, ey := whilescreen("img/elf.png")
+	eSucc, ex, ey := whilescreenMany(20, "img/elf.png", "img/elf2.png")
 	if eSucc {
+		setLog("elfDice", "found elfDice", "")
 		leftMosue(ex, ey)
 		robotgo.Sleep(1)
 		leftMosueforimg("img/getElf.png")
@@ -28,5 +30,5 @@ func elfDice() {
 }
 
 func moveItems() {
-
+	setLog("additionalMatters", "moveItems", "")
 }
