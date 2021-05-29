@@ -27,3 +27,22 @@ leftMosue(x y)
 呼叫processingTask(.Status, "種類", .Arms, .PearlArms, .Method)
 img/is種類.png
 img/not種類.png
+
+# clone 需要覆蓋robotgo 原始程式
+
+func FindBitmap 中
+
+```
+if len(args) <= 0 {
+    FreeBitmap(sbit)
+}
+```
+To
+```
+if len(args) <= 0 {
+    FreeBitmap(sbit)
+} else if len(args) > 0 && args[0] == nil {
+    FreeBitmap(sbit)
+}
+```
+
