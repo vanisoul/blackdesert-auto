@@ -98,6 +98,9 @@ func runTask(typeStr string, method []method) {
 			setLog("runTask", "加工開始", strconv.Itoa(tmpTimeSec))
 			for proing {
 				proing = screenYesOrNoEasy("img/Processeding_1.png", 20)
+				if tmpTimeSec == 0 {
+					additionalMatters()
+				}
 				if proing {
 					tmpTimeSec = tmpTimeSec + 1
 				} else {
