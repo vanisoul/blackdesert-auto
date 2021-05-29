@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-
-	for {
+	additionalMatters()
+	for false {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)
 		if succ {
