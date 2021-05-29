@@ -95,8 +95,8 @@ func runTask(typeStr string, method []method) {
 			proing := true
 
 			tmpTimeSec := 0
+			setLog("runTask", "加工開始", strconv.Itoa(tmpTimeSec))
 			for proing {
-				setLog("runTask", "加工中", strconv.Itoa(tmpTimeSec))
 				proing = screenYesOrNoEasy("img/Processeding_1.png", 20)
 				if proing {
 					tmpTimeSec = tmpTimeSec + 1
@@ -111,6 +111,7 @@ func runTask(typeStr string, method []method) {
 					break
 				}
 			}
+			setLog("runTask", "加工結束", strconv.Itoa(tmpTimeSec))
 			checkMainScreen()
 			robotgo.KeyTap("space")
 			robotgo.Sleep(3)
