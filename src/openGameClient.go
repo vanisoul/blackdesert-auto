@@ -4,6 +4,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
+	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
 )
 
@@ -15,6 +16,23 @@ func openGameClient(path string) (succ bool) {
 		return
 	}
 
-	succ, _, _ = whilescreen("img/gameclientok.png")
+	succok, _, _ := whilescreen("img/gameclientok.png")
+	if succok {
+		succ = true
+		return
+	}
+
+	saveIMG()
+	rsucc, _, _ := whilescreen("img/repair.png")
+	saveIMG()
+	if rsucc {
+		saveIMG()
+		robotgo.Sleep(7200)
+		saveIMG()
+		main()
+	} else {
+		saveIMG()
+		main()
+	}
 	return
 }
