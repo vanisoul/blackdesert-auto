@@ -84,7 +84,7 @@ func tradeGoods() {
 			}
 			robotgo.MoveMouse(649, 644)
 			scrolldown(15)
-			su, ix, iy := whilescreenManyEasy(3, img...)
+			su, ix, iy := whilescreenManyEasy(3, insertStrToFilenameTailArr(img, "Task")...)
 			if su {
 				typeImg1 := fmt.Sprintf("img/%s.png", typeImg)
 				typeImg2 := fmt.Sprintf("img/%s2.png", typeImg)
