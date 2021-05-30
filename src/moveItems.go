@@ -59,16 +59,21 @@ func moveItems() {
 			return
 		}
 		fullSucc := movePutAll(move.Items...)
-		if fullSucc {
-			sendItem()
-		}
+		sendItem(fullSucc, move.HaulType)
+
 	}
 }
 
-func sendItem() {
-	r := saveIMG(true)
-	setLog("sendItem", "發送物品", strconv.Itoa(r))
-	leftMosueforimg("img/sendItem.png")
+func sendItem(fullSucc bool, HaulType string) {
+	task := func() {
+		r := saveIMG(true)
+		setLog("sendItem", "發送物品", strconv.Itoa(r))
+		leftMosueforimg("img/sendItem.png")
+	}
+	if HaulType == "trading" || fullSucc {
+		task()
+	}
+
 }
 
 func selectType(haulType string) (succ bool) {
