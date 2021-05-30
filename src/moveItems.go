@@ -58,7 +58,7 @@ func moveItems() {
 		if !stSucc {
 			return
 		}
-		fullSucc := movePutAll(move.Items...)
+		fullSucc := movePutAll(move.HaulType, move.Items...)
 		sendItem(fullSucc, move.HaulType)
 
 	}
@@ -123,7 +123,7 @@ func checkFullWeight(img string) (succ bool) {
 	return
 }
 
-func movePutAll(imgs ...string) (succ bool) {
+func movePutAll(haulType string, imgs ...string) (succ bool) {
 	takeArticleSum := 0
 	count := 2
 	for count > 0 {
@@ -132,14 +132,17 @@ func movePutAll(imgs ...string) (succ bool) {
 			if succright {
 				robotgo.Sleep(1)
 				maxItem()
-				takeArticleSum = takeArticleSum + 1
-				fuWSucc := checkFullWeight(img)
 				setLog("movePutAll", "加入貨運", img)
-				if fuWSucc {
-					setLog("movePutAll", "貨運已滿", "")
-					succ = fuWSucc
-					return
+				takeArticleSum = takeArticleSum + 1
+				if haulType == "general" {
+					fuWSucc := checkFullWeight(img)
+					if fuWSucc {
+						setLog("movePutAll", "貨運已滿", "")
+						succ = fuWSucc
+						return
+					}
 				}
+
 			}
 			if takeArticleSum == len(imgs) {
 				log.Info("takeArticleSum :", takeArticleSum)
