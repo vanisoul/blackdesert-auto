@@ -192,7 +192,7 @@ func checkFullWeight(img string) (succ bool) {
 	robotgo.Sleep(1)
 	bit := robotgo.CaptureScreen(1400, 250, 500, 600)
 	defer robotgo.FreeBitmap(bit)
-	if img == "煤炭.png" {
+	if img == "煤炭.png" || img == "鋅礦石.png" {
 		succ = !screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "full"), bit, 0.03, 2)
 	} else {
 		succ = screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "bank"), bit, 0.03, 2)
