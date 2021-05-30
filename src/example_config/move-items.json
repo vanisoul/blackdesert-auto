@@ -49,7 +49,7 @@
             "source":"爾提諾巴",
             "sourceSeq":3,
             "destination":"海地爾",
-            "items":["勞工作業監督.png","煤炭.png","鋅礦石.png","銅礦石.png","鐵礦石.png"]
+            "items":["勞工作業監督.png","鋅礦石.png","銅礦石.png","鐵礦石.png","煤炭.png"]
         },
         {
             "haulType":"general",
@@ -74,10 +74,17 @@
         },
         {
             "haulType":"general",
+            "source":"海地爾",
+            "sourceSeq":2,
+            "destination":"格拉納",
+            "items":["白臘樹合板.png","楓樹合板.png","松樹合板.png","白樺樹合板.png","冷杉樹合板.png","衫樹合板.png","扁柏樹合板.png","洋槐樹合板.png","黃銅塊.png","青銅塊.png","釩鑄塊.png","鈦鑄塊.png","鋼鐵.png"]
+        },
+        {
+            "haulType":"general",
             "source":"凱波嵐",
             "sourceSeq":4,
             "destination":"海地爾",
-            "items":["勞工作業監督.png","煤炭.png","衫樹原木.png"]
+            "items":["勞工作業監督.png","衫樹原木.png","煤炭.png"]
         },
         {
             "haulType":"general",
