@@ -47,7 +47,12 @@ func checkStatusArms(typeStr string) (succ bool) {
 		succ = false
 		return
 	}
-	if statusConfig.Status && statusConfig.Type == typeStr && statusConfig.Now < 0 {
+	if !statusConfig.Status {
+		succ = true
+		return
+	}
+
+	if statusConfig.Type == typeStr && statusConfig.Now < 0 {
 		succ = true
 		return
 	}
