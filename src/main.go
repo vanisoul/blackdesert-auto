@@ -11,6 +11,12 @@ import (
 func main() {
 	// rightMosueforimgEasy(insertStrToFilenameTail("鐵礦石.png", "bank"), 6)
 	moveItems()
+	// succa := screenYesOrNoDotTwo(insertStrToFilenameTail("鐵礦石.png", "bank"), 2)
+	// fmt.Println(succa)
+	// bit := robotgo.CaptureScreen(1400, 250, 500, 600)
+	// robotgo.SaveBitmap(bit, "tmpttt.png")
+	// suc := screenYesOrNoDotSelfimg(insertStrToFilenameTail("銅礦石.png", "bank"), 2)
+	// fmt.Println(suc)
 	// maxItem()
 	// xx, yy := robotgo.GetMousePos()
 	// fmt.Println(xx, yy)

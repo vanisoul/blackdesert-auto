@@ -115,7 +115,10 @@ func selectDes(des string) (succ bool) {
 
 func checkFullWeight(img string) (succ bool) {
 	succ = false
-	succ, _, _ = whilescreenEasy(insertStrToFilenameTail(img, "bank"), 2)
+	robotgo.MoveMouse(0, 0)
+	robotgo.Sleep(1)
+	bit := robotgo.CaptureScreen(1400, 250, 500, 600)
+	succ = screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "bank"), bit, 2)
 	return
 }
 
