@@ -42,16 +42,24 @@ func getMoveItems() {
 		leftMosue(960, 500)
 		trSucc := leftMosueforimg("img/transport.png")
 		if !trSucc {
+			robotgo.KeyTap("m")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("esc")
 			continue
 		}
 		trLogoSucc, _, _ := whilescreen("img/transportLogo.png")
 		if !trLogoSucc {
+			robotgo.KeyTap("m")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("esc")
 			continue
 		}
 		_, gx, gy := whilescreenMany(20, "img/getItems.png", "img/getItems2.png")
 		leftMosue(gx, gy)
 
 		robotgo.KeyTap("m")
+		robotgo.Sleep(1)
+		robotgo.KeyTap("esc")
 	}
 
 }
@@ -90,25 +98,39 @@ func moveItems() {
 		leftMosue(960, 500)
 		trSucc := leftMosueforimg("img/transport.png")
 		if !trSucc {
+			robotgo.KeyTap("m")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("esc")
 			continue
 		}
 		trLogoSucc, tlx, tly := whilescreen("img/transportLogo.png")
 		if !trLogoSucc {
+			robotgo.KeyTap("m")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("esc")
 			continue
 		}
 		leftMosue(tlx+340, tly+55)
 
 		sdSucc := selectDes(move.Destination)
 		if !sdSucc {
+			robotgo.KeyTap("m")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("esc")
 			continue
 		}
 		stSucc := selectType(move.HaulType)
 		if !stSucc {
-			return
+			robotgo.KeyTap("m")
+			robotgo.Sleep(1)
+			robotgo.KeyTap("esc")
+			continue
 		}
 		fullSucc := movePutAll(move.HaulType, move.Items...)
 		sendItem(fullSucc, move.HaulType)
 		robotgo.KeyTap("m")
+		robotgo.Sleep(1)
+		robotgo.KeyTap("esc")
 	}
 }
 
