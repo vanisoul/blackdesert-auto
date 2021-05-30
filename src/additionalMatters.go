@@ -96,7 +96,8 @@ func tradeGoods() {
 				leftMosue(ix, iy)
 				leftMosueforimg("img/selectFre.png")
 				maxItem()
-				ok := leftMosueforimg("img/goTask.png")
+				ok, ox, oy := whilescreenMany(20, "img/goTask.png", "img/goTask2.png")
+				leftMosue(ox, oy)
 				if ok {
 					return true
 				}
