@@ -13,7 +13,7 @@ import (
 )
 
 func checkCityImg() bool {
-	return screenYesOrNoEasy("img/checkCityImg.png")
+	return screenYesOrNoEasy("img/checkCityImg.png", 2)
 }
 
 func insertStrToFilenameTailArr(strs []string, taillStr string) (res []string) {

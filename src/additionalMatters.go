@@ -54,7 +54,7 @@ func tradeGoods() {
 	robotgo.MoveMouse(960, 500)
 	scrollup(5)
 	leftMosue(960, 500)
-	trSucc := leftMosueforimg("img/transport.png")
+	trSucc, _, _ := whilescreen("img/transport.png")
 	if !trSucc {
 		robotgo.KeyTap("m")
 		robotgo.Sleep(1)
@@ -70,7 +70,7 @@ func tradeGoods() {
 			}
 			robotgo.KeyTap("esc")
 		}
-		bSucc, bx, by := whilescreen("img/boxing.png", 5)
+		bSucc, bx, by := whilescreenManyEasy(5, "img/boxing.png", "img/boxing2.png")
 		boxSucc = bSucc
 		leftMosue(bx, by)
 		if !boxSucc {
@@ -79,10 +79,11 @@ func tradeGoods() {
 
 		makeFunc := func(typeImg string, img ...string) bool {
 			mSucc := leftMosueforimg("img/make.png")
+			robotgo.Sleep(1)
 			if !mSucc {
 				return false
 			}
-			robotgo.MoveMouse(649, 644)
+			robotgo.MoveMouse(642, 425)
 			scrolldown(15)
 			su, ix, iy := whilescreenManyEasy(3, insertStrToFilenameTailArr(img, "Task")...)
 			if su {
