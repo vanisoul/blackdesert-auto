@@ -20,7 +20,7 @@ func elfDice() {
 	setLog("additionalMatters", "elfDice", "")
 	checkMainScreen()
 	robotgo.KeyTap("esc")
-	eSucc, ex, ey := whilescreenMany(20, "img/elf.png", "img/elf2.png")
+	eSucc, ex, ey := whilescreenMany(4, "img/elf.png", "img/elf2.png")
 	if eSucc {
 		setLog("elfDice", "found elfDice", "")
 		leftMosue(ex, ey)

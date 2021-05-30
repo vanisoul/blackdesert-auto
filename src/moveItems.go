@@ -48,7 +48,8 @@ func getMoveItems() {
 		if !trLogoSucc {
 			continue
 		}
-		leftMosueforimg("img/getItems.png")
+		_, gx, gy := whilescreenMany(20, "img/getItems.png", "img/getItems2.png")
+		leftMosue(gx, gy)
 
 		robotgo.KeyTap("m")
 	}
