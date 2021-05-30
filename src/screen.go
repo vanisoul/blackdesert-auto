@@ -150,7 +150,7 @@ func screenYesOrNoEasy(pngName string, jcount ...int) (succ bool) {
 	}
 }
 
-func screenYesOrNoDotSelfimg(pngName string, bit_ref interface{}, jcount ...int) (succ bool) {
+func screenYesOrNoDotSelfimg(pngName string, bit_ref interface{}, match float64, jcount ...int) (succ bool) {
 	copyFileContents(pngName, "tmp.png")
 	bit_map := robotgo.OpenBitmap("tmp.png")
 	defer robotgo.FreeBitmap(bit_map)
@@ -162,7 +162,7 @@ func screenYesOrNoDotSelfimg(pngName string, bit_ref interface{}, jcount ...int)
 	log.Info("count", count)
 	for {
 		robotgo.Sleep(1)
-		fx, fy := robotgo.FindBitmap(bit_map, bit_ref, 0.1)
+		fx, fy := robotgo.FindBitmap(bit_map, bit_ref, match)
 
 		fmt.Println("FindBitmap------", fx, fy)
 		if fx != -1 && fy != -1 {

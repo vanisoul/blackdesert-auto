@@ -118,7 +118,7 @@ func checkFullWeight(img string) (succ bool) {
 	robotgo.MoveMouse(0, 0)
 	robotgo.Sleep(1)
 	bit := robotgo.CaptureScreen(1400, 250, 500, 600)
-	succ = screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "bank"), bit, 2)
+	succ = screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "bank"), bit, 0.03, 2)
 	return
 }
 
