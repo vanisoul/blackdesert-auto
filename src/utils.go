@@ -12,6 +12,10 @@ import (
 	"github.com/go-vgo/robotgo"
 )
 
+func checkCityImg() bool {
+	return screenYesOrNoEasy("img/checkCityImg.png")
+}
+
 func insertStrToFilenameTailArr(strs []string, taillStr string) (res []string) {
 	newstrs := []string{}
 	for _, str := range strs {

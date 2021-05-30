@@ -9,8 +9,9 @@ import (
 )
 
 func main() {
-
-	for {
+	xx, yy := robotgo.GetMousePos()
+	fmt.Println(xx, yy)
+	for false {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)
 		if succ {
