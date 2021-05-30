@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
@@ -133,8 +134,11 @@ func elfDice() {
 	checkMainScreen()
 	robotgo.KeyTap("esc")
 	eSucc, ex, ey := whilescreenMany(4, "img/elf.png", "img/elf2.png")
+	r := saveIMG(true)
+	setLog("elfDice", "not found elfDice", strconv.Itoa(r))
 	if eSucc {
-		setLog("elfDice", "found elfDice", "")
+		r1 := saveIMG(true)
+		setLog("elfDice", "found elfDice", strconv.Itoa(r1))
 		leftMosue(ex, ey)
 		robotgo.Sleep(1)
 		leftMosueforimg("img/getElf.png")
