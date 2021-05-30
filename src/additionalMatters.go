@@ -70,10 +70,11 @@ func tradeGoods() {
 			}
 			robotgo.KeyTap("esc")
 		}
-		bSucc, bx, by := whilescreenManyEasy(5, "img/boxing.png", "img/boxing2.png")
+		bSucc, bx, by := whilescreenManyEasy(8, "img/boxing.png", "img/boxing2.png")
 		boxSucc = bSucc
 		leftMosue(bx, by)
 		if !boxSucc {
+			robotgo.KeyTap("m")
 			return
 		}
 
@@ -91,6 +92,7 @@ func tradeGoods() {
 				typeImg2 := fmt.Sprintf("img/%s2.png", typeImg)
 				_, tix, tiy := whilescreenMany(2, typeImg1, typeImg2)
 				leftMosue(tix, tiy)
+				robotgo.Sleep(1)
 				robotgo.MoveMouse(0, 0)
 				robotgo.Sleep(1)
 				leftMosue(ix, iy)
@@ -106,7 +108,7 @@ func tradeGoods() {
 		}
 
 		//礦
-		if screenYesOrNoEasy("img/mineral.png") {
+		if screenYesOrNoEasy("img/mineral.png", 5) {
 			if makeFunc("mineral-worker", tradeGoodsConfig.Mineral...) {
 				setLog("tradeGoods", "礦物裝箱派遣成功", "")
 			}
@@ -114,7 +116,7 @@ func tradeGoods() {
 		}
 
 		//木頭
-		if screenYesOrNoEasy("img/wood.png") {
+		if screenYesOrNoEasy("img/wood.png", 5) {
 			if makeFunc("wood-worker", tradeGoodsConfig.Wood...) {
 				setLog("tradeGoods", "木頭裝箱派遣成功", "")
 			}
