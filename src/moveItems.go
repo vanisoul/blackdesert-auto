@@ -94,9 +94,9 @@ func moveItems() {
 		interval := 28
 		leftMosue(30, 257+interval*move.SourceSeq)
 		robotgo.Sleep(3)
-		robotgo.MoveMouse(960, 500)
+		robotgo.MoveMouse(960, 490)
 		scrollup(5)
-		leftMosue(960, 500)
+		leftMosue(960, 490)
 		trSucc := leftMosueforimg("img/transport.png")
 		if !trSucc {
 			robotgo.KeyTap("m")

@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/go-vgo/robotgo"
 	"github.com/labstack/gommon/log"
@@ -79,14 +81,20 @@ func runTask(typeStr string, method []method) {
 					return
 				}
 			}
+			fmlNames := []string{}
 			for _, fml := range med.Formula {
-				takeArticleSum := processPutAll(fml.Name)
-				if takeArticleSum == len(med.Formula) {
-					setLog("runTask", "開始加工", strings.Join(med.Recycle, " ,"))
-					stSucc, stx, sty := whilescreenMany(20, "img/ProcessingStart.png", "img/ProcessingStartOne.png")
-					if stSucc {
-						leftMosue(stx, sty)
-					}
+				fmlNames = append(fmlNames, fml.Name)
+			}
+			takeArticleSum := processPutAll(fmlNames...)
+			if takeArticleSum == len(med.Formula) {
+				r1 := rand.New(rand.NewSource(time.Now().UnixNano())).Int()
+				setLog("runTask", "開始加工", strings.Join(med.Recycle, " ,"))
+				setLog("runTask", "圖片", strconv.Itoa(r1))
+				stSucc, stx, sty := whilescreenMany(20, "img/ProcessingStart.png", "img/ProcessingStartOne.png")
+				if stSucc {
+					r2 := rand.New(rand.NewSource(time.Now().UnixNano())).Int()
+					setLog("runTask", "圖片", strconv.Itoa(r2))
+					leftMosue(stx, sty)
 				}
 			}
 
@@ -98,10 +106,13 @@ func runTask(typeStr string, method []method) {
 			setLog("runTask", "加工開始", strconv.Itoa(tmpTimeSec))
 			for proing {
 				proing = screenYesOrNoEasy("img/Processeding_1.png", 20)
-				if tmpTimeSec == 0 {
-					additionalMatters()
-				}
+
 				if proing {
+					if tmpTimeSec == 0 {
+						r := rand.New(rand.NewSource(time.Now().UnixNano())).Int()
+						setLog("additionalMatters", "計時等於0時執行並行額外工作", strconv.Itoa(r))
+						additionalMatters()
+					}
 					tmpTimeSec = tmpTimeSec + 1
 				} else {
 					tmpTimeSec = tmpTimeSec + 20
