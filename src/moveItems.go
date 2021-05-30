@@ -23,7 +23,7 @@ func moveItems() {
 		robotgo.KeyTap("m")
 		mSucc, _, _ := whilescreenEasy("img/findMap.png")
 		if !mSucc {
-			return
+			continue
 		}
 
 		ctrlA := func() {
@@ -108,14 +108,9 @@ func selectDes(des string) (succ bool) {
 	return
 }
 
-func checkFullWeight() (succ bool) {
+func checkFullWeight(img string) (succ bool) {
 	succ = false
-	succ, _, _ = whilescreenEasy("img/FullWeight.png", 2)
-	// if haulType == "general" {
-	// 	succ, _, _ = whilescreenManyEasy(20, "img/FullWeight3000.png", "img/FullWeight1500.png")
-	// } else if haulType == "trading" {
-	// 	succ, _, _ = whilescreenManyEasy(20, "img/FullWeight31500.png", "img/FullWeight30000.png")
-	// }
+	succ, _, _ = whilescreenEasy(insertStrToFilenameTail(img, "bank"), 2)
 	return
 }
 
@@ -129,7 +124,7 @@ func movePutAll(imgs ...string) (succ bool) {
 				robotgo.Sleep(1)
 				maxItem()
 				takeArticleSum = takeArticleSum + 1
-				fuWSucc := checkFullWeight()
+				fuWSucc := checkFullWeight(img)
 				setLog("movePutAll", "加入貨運", img)
 				if fuWSucc {
 					setLog("movePutAll", "貨運已滿", "")
