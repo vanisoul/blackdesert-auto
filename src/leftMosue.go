@@ -23,6 +23,18 @@ func leftMosueforimg(img string) (succ bool) {
 	}
 }
 
+func leftMosueforimgCount(img string, count int) (succ bool) {
+	succscr, x, y := whilescreen(img, count)
+	if succscr {
+		leftMosueforimgFunc(x, y)
+		succ = true
+		return
+	} else {
+		succ = false
+		return
+	}
+}
+
 func leftMosueforimgEasy(img string) (succ bool) {
 	succscr, x, y := whilescreenEasy(img)
 	if succscr {

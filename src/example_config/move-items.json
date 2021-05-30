@@ -6,16 +6,14 @@
             "source":"沙粒巴扎勒",
             "sourceSeq":1,
             "destination":"海地爾",
-            "destinationSeq":2,
-            "items":["勞工作業監督","鐵礦石","鈦礦石","銅礦石"]
+            "items":["勞工作業監督.png","鐵礦石.png","鈦礦石.png","銅礦石.png"]
         },
         {
             "haulType":"trading",
             "source":"格拉納",
             "sourceSeq":1,
             "destination":"首都瓦倫西亞",
-            "destinationSeq":1,
-            "items":["鋼鐵鑄塊箱子","青銅鑄塊箱子","黃銅鑄塊箱子","梅迪亞木材箱子","卡爾佩恩木材箱子","賽林迪亞木材箱子","巴雷諾斯木材箱子"]
+            "items":["鋼鐵鑄塊箱子.png","青銅鑄塊箱子.png","黃銅鑄塊箱子.png","梅迪亞木材箱子.png","卡爾佩恩木材箱子.png","賽林迪亞木材箱子.png","巴雷諾斯木材箱子.png"]
         }
     ]
 }

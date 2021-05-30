@@ -8,6 +8,8 @@ import (
 	"path"
 	"strings"
 	"time"
+
+	"github.com/go-vgo/robotgo"
 )
 
 func insertStrToFilenameTailArr(strs []string, taillStr string) (res []string) {
@@ -148,4 +150,12 @@ func arrayToString(a []int, delim string) string {
 
 func FormulaNameArrayToString(fml []formula, delim string) string {
 	return strings.Trim(strings.Replace(fmt.Sprint(fml), " ", delim, -1), "[]")
+}
+
+func maxItem() {
+	robotgo.Sleep(1)
+	robotgo.KeyTap("f")
+	robotgo.Sleep(1)
+	robotgo.KeyTap("enter")
+	robotgo.Sleep(1)
 }

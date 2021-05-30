@@ -69,7 +69,7 @@ func searchRepo() {
 		robotgo.KeyTap(key, "alt")
 		sersucc, x, y := whilescreen("img/searchNPC.png")
 		if sersucc {
-			textLocation(x-240, y, infoConfig.Repo)
+			textLocationBefore(x-240, y, infoConfig.Repo)
 			leftMosue(x, y)
 			leftMosue(x-240, y-170)
 			robotgo.Sleep(1)

@@ -1,11 +1,16 @@
 package main
 
-import "github.com/go-vgo/robotgo"
+import (
+	"github.com/go-vgo/robotgo"
+)
 
 func additionalMatters() {
 	setLog("additionalMatters", "", "")
 	//精靈骰子
 	elfDice()
+
+	//領取物品
+	// getMoveItems()
 
 	//搬運物品
 	moveItems()
@@ -27,8 +32,4 @@ func elfDice() {
 		robotgo.KeyTap("esc")
 	}
 	robotgo.KeyTap("esc")
-}
-
-func moveItems() {
-	setLog("additionalMatters", "moveItems", "")
 }

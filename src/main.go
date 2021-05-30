@@ -9,7 +9,11 @@ import (
 )
 
 func main() {
-	additionalMatters()
+	// rightMosueforimgEasy(insertStrToFilenameTail("鐵礦石.png", "bank"), 6)
+	moveItems()
+	// maxItem()
+	// xx, yy := robotgo.GetMousePos()
+	// fmt.Println(xx, yy)
 	for false {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)

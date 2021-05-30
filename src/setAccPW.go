@@ -9,11 +9,11 @@ func setAccPW(acc string, pw string) (succ bool) {
 	}
 	succsc, imgx, imgy := whilescreen("img/login.png")
 	if succsc {
-		accsucc := textLocation(imgx, imgy-105, acc, ctrlA)
+		accsucc := textLocationBefore(imgx, imgy-105, acc, ctrlA)
 		if !accsucc {
 			return
 		}
-		pwsucc := textLocation(imgx, imgy-55, pw)
+		pwsucc := textLocationBefore(imgx, imgy-55, pw)
 		if !pwsucc {
 			return
 		}
