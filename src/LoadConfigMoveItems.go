@@ -21,8 +21,9 @@ func LoadConfigMoveItems() (config ConfigMoveItems, err error) {
 }
 
 type ConfigMoveItems struct {
-	Status bool        `mapstructure:"status"`
-	Moves  []MoveItems `mapstructure:"moves"`
+	Status  bool        `mapstructure:"status"`
+	Recycle []Recycle   `mapstructure:"recycle"`
+	Moves   []MoveItems `mapstructure:"moves"`
 }
 
 type MoveItems struct {
@@ -32,4 +33,8 @@ type MoveItems struct {
 	Destination    string   `mapstructure:"destination"`
 	DestinationSeq int      `mapstructure:"destinationSeq"`
 	Items          []string `mapstructure:"items"`
+}
+type Recycle struct {
+	City string `mapstructure:"city"`
+	Seq  int    `mapstructure:"seq"`
 }

@@ -1,5 +1,20 @@
 {
     "status" : true,
+    "recycle":[
+        {
+            "city":"首都瓦倫西亞",
+            "seq":1
+        },
+        {
+            "city":"海地爾",
+            "seq":2
+        },
+        {
+            "city":"格拉納",
+            "seq":1
+        }
+
+    ],
     "moves":[
         {
             "haulType":"general",

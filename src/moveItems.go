@@ -8,6 +8,53 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+func getMoveItems() {
+	moveItemsConfig, err := LoadConfigMoveItems()
+	if err != nil {
+		log.Errorf("cannot load moveItemsConfig:", err)
+		return
+	}
+	if !moveItemsConfig.Status {
+		return
+	}
+
+	for _, recy := range moveItemsConfig.Recycle {
+		checkMainScreen()
+		robotgo.KeyTap("m")
+		mSucc, _, _ := whilescreenEasy("img/findMap.png")
+		if !mSucc {
+			continue
+		}
+
+		ctrlA := func() {
+			robotgo.KeyTap("a", "control")
+		}
+		enter := func() {
+			robotgo.KeyTap("enter")
+		}
+		textLocationBeforeAfter(34, 113, recy.City, ctrlA, enter)
+		robotgo.Sleep(1)
+		interval := 28
+		leftMosue(30, 257+interval*recy.Seq)
+		robotgo.Sleep(3)
+		robotgo.MoveMouse(960, 500)
+		scrollup(5)
+		leftMosue(960, 500)
+		trSucc := leftMosueforimg("img/transport.png")
+		if !trSucc {
+			continue
+		}
+		trLogoSucc, _, _ := whilescreen("img/transportLogo.png")
+		if !trLogoSucc {
+			continue
+		}
+		leftMosueforimg("img/getItems.png")
+
+		robotgo.KeyTap("m")
+	}
+
+}
+
 func moveItems() {
 	moveItemsConfig, err := LoadConfigMoveItems()
 	if err != nil {

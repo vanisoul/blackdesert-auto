@@ -9,11 +9,11 @@ import (
 )
 
 func main() {
-	moveItems()
+	// getMoveItems()
 	// su := checkFullWeight("鈦礦石.png")
 	// fmt.Println(su)
 
-	for false {
+	for {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)
 		if succ {

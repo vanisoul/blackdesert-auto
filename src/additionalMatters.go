@@ -10,7 +10,7 @@ func additionalMatters() {
 	elfDice()
 
 	//領取物品
-	// getMoveItems()
+	getMoveItems()
 
 	//搬運物品
 	moveItems()
