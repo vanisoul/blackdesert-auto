@@ -60,7 +60,7 @@ func moveItems() {
 		}
 		fullSucc := movePutAll(move.HaulType, move.Items...)
 		sendItem(fullSucc, move.HaulType)
-
+		robotgo.KeyTap("m")
 	}
 }
 
@@ -80,6 +80,7 @@ func selectType(haulType string) (succ bool) {
 	succ = false
 	_, sx, sy := whilescreenEasy("img/selectCar.png")
 	leftMosue(sx, sy)
+	robotgo.Sleep(1)
 	if haulType == "general" {
 		succ = leftMosueforimg("img/generalCar.png")
 	} else if haulType == "trading" {
@@ -98,6 +99,7 @@ func selectDes(des string) (succ bool) {
 		return
 	}
 	leftMosue(dx, dy)
+	robotgo.Sleep(1)
 	count := 5
 	for count > 0 {
 
