@@ -75,6 +75,7 @@ func moveItems() {
 	}
 
 	for _, move := range moveItemsConfig.Moves {
+		setLog("moveItem", "開始移動", move.Source)
 		checkMainScreen()
 		robotgo.KeyTap("m")
 		mSucc, _, _ := whilescreenEasy("img/findMap.png")
@@ -191,7 +192,11 @@ func checkFullWeight(img string) (succ bool) {
 	robotgo.Sleep(1)
 	bit := robotgo.CaptureScreen(1400, 250, 500, 600)
 	defer robotgo.FreeBitmap(bit)
-	succ = screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "bank"), bit, 0.03, 2)
+	if img == "煤炭.png" {
+		succ = !screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "full"), bit, 0.03, 2)
+	} else {
+		succ = screenYesOrNoDotSelfimg(insertStrToFilenameTail(img, "bank"), bit, 0.03, 2)
+	}
 	return
 }
 

@@ -9,9 +9,6 @@ import (
 )
 
 func main() {
-	// getMoveItems()
-	// su := checkFullWeight("鈦礦石.png")
-	// fmt.Println(su)
 
 	for {
 		leftMosue(0, 0)
