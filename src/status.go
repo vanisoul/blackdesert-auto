@@ -57,6 +57,7 @@ func checkStatusArms(typeStr string) (succ bool) {
 		return
 	}
 	return
+
 }
 
 func checkStatusMethodnumbersCount(typeStr string, method []method) (succ bool, methodnumbers []int, skip int) {
