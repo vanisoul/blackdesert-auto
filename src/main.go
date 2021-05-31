@@ -107,18 +107,14 @@ func taskFeatures() {
 
 	//狀態不啟動執行
 	if !statusConfig.Status ||
-		//如果符合其中一項不執行 都不符合才執行
-		!((statusConfig.Status && (statusConfig.Type == "ChopWood" || statusConfig.Type == "RoyalCuisinePacking")) || (statusConfig.Status && statusConfig.Type == "Heating" && statusConfig.Now == -2)) ||
 		//有開狀態 正常會進入流程 為 上一個正常結束
-		statusConfig.Status && statusConfig.Type == "" && statusConfig.Now == -1 {
+		statusConfig.Status && statusConfig.Type == "" && statusConfig.Now == -1 || statusConfig.Type == "Heating" && statusConfig.Now > 0 {
 		// 加熱
 		heatingTask()
 		checkMainScreen()
 	}
 	//狀態不啟動執行
 	if !statusConfig.Status ||
-		//如果符合其中一項不執行 都不符合才執行
-		!((statusConfig.Status && (statusConfig.Type == "RoyalCuisinePacking")) || (statusConfig.Status && statusConfig.Type == "ChopWood" && statusConfig.Now == -2)) ||
 		//有開狀態 正常會進入流程 為 上一個正常結束 && 自己大於0
 		(statusConfig.Status && statusConfig.Type == "Heating" && statusConfig.Now == -2) || statusConfig.Status && statusConfig.Type == "ChopWood" && statusConfig.Now > 0 {
 		// 砍材
