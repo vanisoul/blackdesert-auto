@@ -9,9 +9,14 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
-func processingTask(status bool, typeStr string, arms []string, pearlArms []string, method []method) {
+func processingTask(status bool, typeStr string, arms []string, pearlArms []string, method []method, mattersArr ...bool) {
 
 	if status {
+		matters := true
+		if len(mattersArr) != 0 {
+			matters = mattersArr[0]
+		}
+
 		infoConfig, err := LoadConfigInfo()
 		if err != nil {
 			log.Errorf("cannot load config:", err)
@@ -28,13 +33,12 @@ func processingTask(status bool, typeStr string, arms []string, pearlArms []stri
 			setStatusArms(typeStr)
 		}
 
-		runTask(typeStr, method)
+		runTask(typeStr, method, matters)
 	}
 }
 
-func runTask(typeStr string, method []method) {
-	// heatingConfig.Method[0].Formula[0].Name
-	// heatingConfig.Method[0].Formula[0].Lov
+func runTask(typeStr string, method []method, matters bool) {
+
 	infoConfig, err := LoadConfigInfo()
 	if err != nil {
 		log.Errorf("cannot load config:", err)
@@ -108,8 +112,11 @@ func runTask(typeStr string, method []method) {
 				if proing {
 					if tmpTimeSec == 0 {
 						r := saveIMG(true)
-						setLog("additionalMatters", "計時等於0時執行並行額外工作", strconv.Itoa(r))
-						additionalMatters()
+						setLog("runTask", "開始加工", strconv.Itoa(r))
+						if matters {
+							setLog("additionalMatters", "計時等於0時執行並行額外工作", "")
+							additionalMatters()
+						}
 					}
 					tmpTimeSec = tmpTimeSec + 1
 				} else {
