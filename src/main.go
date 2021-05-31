@@ -105,13 +105,18 @@ func taskFeatures() {
 	beerTask()
 	checkMainScreen()
 
-	if !(statusConfig.Status && (statusConfig.Type == "ChopWood" || statusConfig.Type == "RoyalCuisinePacking")) {
+	if !statusConfig.Status ||
+		!(statusConfig.Status && (statusConfig.Type == "ChopWood" || statusConfig.Type == "RoyalCuisinePacking")) ||
+		!(statusConfig.Status && statusConfig.Type == "Heating" && statusConfig.Now == -2) {
 		// 加熱
 		heatingTask()
 		checkMainScreen()
 	}
 
-	if !(statusConfig.Status && (statusConfig.Type == "RoyalCuisinePacking")) {
+	if !statusConfig.Status ||
+		!(statusConfig.Status && (statusConfig.Type == "RoyalCuisinePacking")) ||
+		!(statusConfig.Status && statusConfig.Type == "ChopWood" && statusConfig.Now == -2) ||
+		statusConfig.Status && statusConfig.Type == "Heating" && statusConfig.Now == -2 {
 		// 砍材
 		chopWoodTask()
 		// checkMainScreen()

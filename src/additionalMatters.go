@@ -133,7 +133,7 @@ func elfDice() {
 	setLog("additionalMatters", "elfDice", "")
 	checkMainScreen()
 	robotgo.KeyTap("esc")
-	eSucc, ex, ey := whilescreenMany(4, "img/elf.png", "img/elf2.png")
+	eSucc, ex, ey := whilescreenManyEasy(4, "img/elf.png", "img/elf2.png")
 	r := saveIMG(true)
 	setLog("elfDice", "not found elfDice", strconv.Itoa(r))
 	if eSucc {

@@ -134,6 +134,7 @@ func runTask(typeStr string, method []method) {
 		}
 		tmpcount = tmpcount + 1
 	}
+	setStatusMethod(typeStr, methodnumbers, -2)
 }
 
 func processPutAll(imgs ...string) (takeArticleSum int) {
