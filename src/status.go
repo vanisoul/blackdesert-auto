@@ -51,8 +51,8 @@ func checkStatusArms(typeStr string) (succ bool) {
 		succ = true
 		return
 	}
-
-	if statusConfig.Now == -2 {
+	//如果某項工作結束 那下一次就要換裝 如果總結束 下一次也要換裝
+	if statusConfig.Now == -2 || statusConfig.Now == -1 {
 		succ = true
 		return
 	}
