@@ -102,8 +102,8 @@ func taskFeatures() {
 		return
 	}
 	//勞工恢復體力
-	// beerTask()
-	// checkMainScreen()
+	beerTask()
+	checkMainScreen()
 
 	//狀態不啟動執行
 	if !statusConfig.Status ||
