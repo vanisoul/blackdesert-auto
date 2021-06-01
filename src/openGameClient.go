@@ -16,7 +16,7 @@ func openGameClient(path string) (succ bool) {
 		return
 	}
 
-	rsucc, _, _ := whilescreen("img/repair.png")
+	rsucc, _, _ := whilescreenMany(5, "img/repair.png", "img/repair2.png")
 	saveIMG()
 	if rsucc {
 		robotgo.Sleep(7200)
