@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-
 	for {
 		leftMosue(0, 0)
 		succ := checkMainScreen(false)
@@ -130,6 +129,7 @@ func taskFeatures() {
 	endStatus()
 }
 
+//不傳入東西的話 檢查失敗會回main
 func checkMainScreen(gotomain ...bool) (succ bool) {
 	count := 3
 	for count > 0 {

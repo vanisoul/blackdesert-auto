@@ -16,23 +16,18 @@ func openGameClient(path string) (succ bool) {
 		return
 	}
 
+	rsucc, _, _ := whilescreen("img/repair.png")
+	saveIMG()
+	if rsucc {
+		robotgo.Sleep(7200)
+		main()
+	}
+
 	succok, _, _ := whilescreen("img/gameclientok.png")
 	if succok {
 		succ = true
 		return
 	}
 
-	saveIMG()
-	rsucc, _, _ := whilescreen("img/repair.png")
-	saveIMG()
-	if rsucc {
-		saveIMG()
-		robotgo.Sleep(7200)
-		saveIMG()
-		main()
-	} else {
-		saveIMG()
-		main()
-	}
 	return
 }
