@@ -180,14 +180,15 @@ func setSafe(safepwd string) {
 }
 
 func startGame() {
-	succstart, x, y := whilescreen("img/clientStart.png")
-	if succstart {
-		setLog("startGame", "從客戶端開啟遊戲", "")
-		leftMosue(x, y)
-	} else {
-		succupdata, _, _ := whilescreen("img/clientUpdate.png", 5)
-		if succupdata {
-			startGame()
+	upSucc := true
+	for upSucc {
+		succstart, x, y := whilescreen("img/clientStart.png")
+		if succstart {
+			setLog("startGame", "從客戶端開啟遊戲", "")
+			leftMosue(x, y)
+			return
+		} else {
+			upSucc, _, _ = whilescreen("img/update.png")
 		}
 	}
 }

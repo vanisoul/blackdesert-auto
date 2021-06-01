@@ -23,15 +23,10 @@ func openGameClient(path string) (succ bool) {
 		main()
 	}
 
-	upSucc := true
-	for upSucc {
-		succok, _, _ := whilescreen("img/gameclientok.png")
-		if succok {
-			succ = true
-			return
-		} else {
-			upSucc, _, _ = whilescreen("img/update.png")
-		}
+	succok, _, _ := whilescreen("img/gameclientok.png")
+	if succok {
+		succ = true
+		return
 	}
 
 	return
