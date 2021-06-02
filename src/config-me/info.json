@@ -1,0 +1,16 @@
+{
+    "role" : "1",
+    "location" : "海地爾",
+    "gamePath" : "D:\\BlackDesert",
+    "selectGraphics" : 1,
+    "gameScreenX" : 0,
+    "gameScreenY" : 0,
+    "gameScreenW" : 1920,
+    "gameScreenH" : 1080,
+    "searchNPC" : "alt+m",
+    "repo" : "阿梅里葛",
+    "drinkingOnTheWayToWork" : 1,
+    "processedTimeSec" : 3600,
+    "processingCutoverArm" : true,
+    "clearBag":[]
+}

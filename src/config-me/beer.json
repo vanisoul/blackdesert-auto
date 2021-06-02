@@ -1,0 +1,7 @@
+{
+    "status" : true,
+    "hotKey" : "F1",
+    "articlesTake" : ["啤酒.png", "烤鳥肉.png"],
+    "articlesSave" : ["啤酒.png", "烤鳥肉.png"],
+    "count":1000
+}

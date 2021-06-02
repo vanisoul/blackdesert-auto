@@ -1,0 +1,151 @@
+{
+    "status" : false,
+    "arms":["砍柴加工石.png"],
+    "pearlArms":[],
+    "method":[
+        {
+            "formula" : [
+                {
+                    "name" : "白臘樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["白臘樹木板.png","白臘樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "白臘樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["白臘樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "楓樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["楓樹木板.png","楓樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "楓樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["楓樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "松樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["松樹木板.png","松樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "松樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["松樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "白樺樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["白樺樹木板.png","白樺樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "白樺樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["白樺樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "冷杉樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["冷杉樹木板.png","冷杉樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "冷杉樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["冷杉樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "衫樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["衫樹木板.png","衫樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "衫樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["衫樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "扁柏樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["扁柏樹木板.png","扁柏樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "扁柏樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["扁柏樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "洋槐樹原木.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["洋槐樹木板.png","洋槐樹合板.png"]
+        }
+        ,{
+            "formula" : [
+                {
+                    "name" : "洋槐樹木板.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["洋槐樹合板.png"]
+        }
+    ]
+}

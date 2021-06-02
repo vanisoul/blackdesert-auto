@@ -1,0 +1,108 @@
+{
+    "status" : false,
+    "arms":["加熱加工石.png"],
+    "pearlArms":[],
+    "method":[
+        {
+            "formula" : [
+                {
+                    "name" : "鐵碎片.png",
+                    "LoV"  : 3000
+                },
+                {
+                    "name" : "煤炭.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["鋼鐵.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "鐵礦石.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["鐵碎片.png","鐵鑄塊.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "銅礦石.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["銅鑄塊.png","銅碎片.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "鋅礦石.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["鋅鑄塊.png","鋅碎片.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "鋅碎片.png",
+                    "LoV"  : 3000
+                },                
+                {
+                    "name" : "銅碎片.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["黃銅塊.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "錫礦石.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["錫鑄塊.png","錫碎片.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "銅碎片.png",
+                    "LoV"  : 3000
+                },
+                {
+                    "name" : "錫碎片.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["青銅塊.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "釩礦石.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["釩碎片.png","釩鑄塊.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "釩碎片.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["釩鑄塊.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "鈦礦石.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["鈦碎片.png","鈦鑄塊.png"]
+        },{
+            "formula" : [
+                {
+                    "name" : "鈦碎片.png",
+                    "LoV"  : 3000
+                }
+            ],
+            "recycle" : ["鈦鑄塊.png"]
+        }
+    ]
+}
